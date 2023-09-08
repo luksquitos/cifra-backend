@@ -1,8 +1,22 @@
-# Base para novos projetos Django
-Esse repositório serve apenas para ser clonado e utilizado em novos projetos.
-Contém Docker e algumas bibliotecas.
+# Cifra
+Comparador de preços bolado.
 
 ## Comandos
+
+Rodar o container
+```
+docker-compose up --build
+```
+
+Criar migrations
+```
+docker-compose exec api ./manage.py makemigrations
+```
+
+Aplicar migrations
+```
+docker-compose exec api ./manage.py migrate
+```
 
 Acessar terminal do container do serviço API
 ```
