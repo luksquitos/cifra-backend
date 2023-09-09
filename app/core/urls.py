@@ -20,11 +20,20 @@ from django.conf.urls.static import static
 from django.conf import settings
 from rest_framework.routers import DefaultRouter
 from markets.api.viewsets import MarketViewset, ProductViewset
+from markets.admin_api.viewsets import (
+    MarketAdminViewset,
+    ProductAdminViewset,
+    ProductImageAdminViewset
+)
 
 
 router = DefaultRouter()
 router.register("markets", MarketViewset, "Markets")
 router.register("products", ProductViewset, "Products")
+#admin-api
+router.register("admin-api/markets", MarketAdminViewset, "MarketAdmin")
+router.register("admin-api/products", ProductAdminViewset, "ProductAdmin")
+router.register("admin-api/products-images", ProductImageAdminViewset, "ProductImageAdmin")
 
 
 urlpatterns = [
