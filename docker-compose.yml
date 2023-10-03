@@ -5,18 +5,18 @@ services:
     build: 
       context: ./app
       dockerfile: Dockerfile
-    container_name: api
+    container_name: cifra-api
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - ./app/:/opt/app/
     ports:
       - "8000:8000"
     depends_on:
-      - db
+      - cifra-db
   
   db:
     image: postgres
-    container_name: db
+    container_name: cifra-db
     environment:
       - POSTGRES_DB=postgres
       - POSTGRES_USER=postgres
