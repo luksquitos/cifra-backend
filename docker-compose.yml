@@ -1,0 +1,40 @@
+version: '3.3'
+
+networks:
+  cifra:
+    driver: bridge
+
+services:
+  db:
+    image: postgres:15-alpine
+    restart: always
+    volumes:
+      - cifra:/var/lib/postgresql/data/
+    environment:
+      - TZ=America/Sao_Paulo
+    networks:
+      - cifra
+    env_file:
+      - .env
+
+  api:
+    build: .
+    entrypoint: ['./entrypoints/api.sh']
+    container_name: api
+    restart: always
+    ports:
+      - 8000:8000
+    networks:
+      - cifra
+    volumes:
+      - ./core:/app/core
+      - ./features:/app/features
+      - ./media:/app/media
+      - ./widgets:/app/widgets
+    env_file:
+      - .env
+    depends_on:
+      - "db"
+
+volumes:
+  cifra:

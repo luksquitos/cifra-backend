@@ -1,0 +1,17 @@
+.date-widget {
+    margin-bottom: 10px !important;
+}
+
+@media (prefers-color-scheme: dark) {
+    .date-widget::-webkit-calendar-picker-indicator {
+        filter: invert(1);
+    }
+}
+
+html[data-theme="dark"] .date-widget::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+html[data-theme="light"] .date-widget::-webkit-calendar-picker-indicator {
+    filter: invert(0);
+}

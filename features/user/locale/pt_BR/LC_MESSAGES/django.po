@@ -1,0 +1,10 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: frequência escolar\n"
+"Report-Msgid-Bugs-To: \n"
+"MIME-Version: 1.0\n"
+"Language: pt_BR\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "The two passwords do not match."
+msgstr "As duas senhas não conferem."
