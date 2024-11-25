@@ -5,5 +5,6 @@ urlpatterns = [
     path("auth/", include("features.authentication.urls")),
     path("docs/", include("core.swagger.urls")),
     path("users/", include("features.user.urls")),
+    path("products/", include("features.products.urls")),
     path("", lambda x: redirect(reverse("swagger-ui"))),
 ]
