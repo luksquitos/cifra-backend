@@ -1,0 +1,92 @@
+[
+    {
+        "model": "products.product",
+        "pk": 1,
+        "fields": {
+            "construtor": "Construtora Alfa",
+            "name": "Cimento CP-II 50kg",
+            "price": 25.50
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 2,
+        "fields": {
+            "construtor": "Construtora Beta",
+            "name": "Bloco Cerâmico Estrutural 14x19x39cm",
+            "price": 1.80
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 3,
+        "fields": {
+            "construtor": "Construtora Gama",
+            "name": "Areia Média Lavada - Saco 20kg",
+            "price": 18.00
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 4,
+        "fields": {
+            "construtor": "Construtora Delta",
+            "name": "Cal Hidratada CH-III 20kg",
+            "price": 12.40
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 5,
+        "fields": {
+            "construtor": "Construtora Alfa",
+            "name": "Tijolo de Vidro 19x19x8cm",
+            "price": 9.90
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 6,
+        "fields": {
+            "construtor": "Construtora Beta",
+            "name": "Viga de Concreto Pré-moldado 15x30x3m",
+            "price": 180.00
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 7,
+        "fields": {
+            "construtor": "Construtora Gama",
+            "name": "Telha de Fibrocimento 2,44x1,10m",
+            "price": 55.70
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 8,
+        "fields": {
+            "construtor": "Construtora Delta",
+            "name": "Piso Porcelanato 60x60cm Acetinado",
+            "price": 45.50
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 9,
+        "fields": {
+            "construtor": "Construtora Alfa",
+            "name": "Porta de Madeira Maciça 210x80cm",
+            "price": 350.00
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 10,
+        "fields": {
+            "construtor": "Construtora Beta",
+            "name": "Janela de Alumínio 120x100cm",
+            "price": 420.00
+        }
+    }
+]
