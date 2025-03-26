@@ -1,0 +1,38 @@
+version: '3.3'
+
+networks:
+  cifra:
+    driver: bridge
+
+services:
+  db:
+    image: postgres:17-alpine
+    restart: always
+    volumes:
+      - project:/var/lib/postgresql/data/
+    environment:
+      - TZ=America/Sao_Paulo
+      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+    networks:
+      - cifra
+
+  api:
+    build: .
+    entrypoint: ['./entrypoints/api.sh']
+    restart: always
+    ports:
+      - 8000:8000
+    networks:
+      - cifra
+    volumes:
+      - ./core:/app/core
+      - ./features:/app/features
+      - ./media:/app/media
+    env_file:
+      .env
+
+
+volumes:
+  project:
