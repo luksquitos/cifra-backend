@@ -1,7 +1,7 @@
 version: '3.3'
 
 networks:
-  network-name: # Mudar nome
+  cifra:
     driver: bridge
 
 services:
@@ -16,7 +16,7 @@ services:
       - POSTGRES_USER=${DB_USER}
       - POSTGRES_PASSWORD=${DB_PASSWORD}
     networks:
-      - network-name
+      - cifra
 
   api:
     build: .
@@ -25,7 +25,7 @@ services:
     ports:
       - 8000:8000
     networks:
-      - network-name
+      - cifra
     volumes:
       - ./core:/app/core
       - ./features:/app/features

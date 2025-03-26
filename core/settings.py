@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     # Core Configurations
     "core.api",
     "core.swagger",
+    'image_uploader_widget',
     # Feature Apps
     "features.authentication",
     "features.user",
@@ -153,8 +154,7 @@ REST_FRAMEWORK = {
 }
 
 SPECTACULAR_SETTINGS = {
-    "TITLE": "API",
-    "DESCRIPTION": "Uma base para projetos em geral",
+    "TITLE": "Cifra Marketplace API",
     "VERSION": "1.0.0",
     "SERVE_INCLUDE_SCHEMA": False,
     # OTHER SETTINGS
