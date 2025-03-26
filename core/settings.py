@@ -6,7 +6,6 @@ env = environ.Env(
     SECRET_KEY=(str, "forlocaltest"),
     CORS_ALLOWED_ORIGIN_REGEXES=(list, None),
     CSRF_TRUSTED_ORIGINS=(list, None),
-    EMAIL_USE_TLS=(bool, True),
 )
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -172,11 +171,3 @@ SPECTACULAR_SETTINGS = {
         },
     ],
 }
-
-EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST = env("EMAIL_HOST")
-EMAIL_HOST_USER = env("EMAIL_HOST_USER")
-EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD")
-EMAIL_PORT = env("EMAIL_PORT")
-EMAIL_USE_TLS = env("EMAIL_USE_TLS")
-DEFAULT_FROM_EMAIL = env("EMAIL_DEFAULT_FROM")
