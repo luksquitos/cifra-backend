@@ -6,6 +6,7 @@ ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 RUN apt-get update && apt-get install -y \
     python3-dev \
+    netcat-traditional \
     default-libmysqlclient-dev \
     software-properties-common
 

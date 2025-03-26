@@ -70,19 +70,19 @@ class UserToken(models.Model):
 
         super().save(*args, **kwargs)
 
-    def send_email(self):
-        from core.mailer import send_email
+    # def send_email(self):
+    #     from core.mailer import send_email
 
-        email_template_path = self.get_email_template_path()
+    #     email_template_path = self.get_email_template_path()
 
-        send_email.apply_async(
-            countdown=2,
-            args=[email_template_path],
-            kwargs={
-                "body_context": {"token": self.token},
-                "to_emails": [self.user.email],
-            },
-        )
+    #     send_email.apply_async(
+    #         countdown=2,
+    #         args=[email_template_path],
+    #         kwargs={
+    #             "body_context": {"token": self.token},
+    #             "to_emails": [self.user.email],
+    #         },
+    #     )
 
     def get_email_template_path(self) -> int:
         if self.email_template_path is None:

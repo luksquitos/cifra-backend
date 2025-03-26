@@ -2,10 +2,7 @@
 name = "template-de-projeto"
 version = "0.0.1"
 dependencies = [
-    "celery==5.3.1",
     "Django==5.1",
-    "django-celery-beat==2.7.0",
-    "django-celery-results==2.5.1",
     "django-cors-headers==4.2.0",
     "django-environ==0.10.0",
     "djangorestframework==3.14.0",

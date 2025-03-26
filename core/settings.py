@@ -31,9 +31,6 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    # Background Jobs
-    "django_celery_results",
-    "django_celery_beat",
     # API
     "rest_framework",
     "corsheaders",
@@ -42,7 +39,6 @@ INSTALLED_APPS = [
     # Core Configurations
     "core.api",
     "core.swagger",
-    "core.mailer",
     # Feature Apps
     "features.authentication",
     "features.user",
@@ -184,7 +180,3 @@ EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD")
 EMAIL_PORT = env("EMAIL_PORT")
 EMAIL_USE_TLS = env("EMAIL_USE_TLS")
 DEFAULT_FROM_EMAIL = env("EMAIL_DEFAULT_FROM")
-
-CELERY_RESULT_BACKEND = "django-db"
-CELERY_CACHE_BACKEND = "django-cache"
-CELERY_RESULT_EXTENDED = True
