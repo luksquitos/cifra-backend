@@ -1,5 +1,4 @@
-# Template para projetos
-Um template atualizado para novos projetos, ao invés de usar o template gerado pelo próprio Django.
+# Cifra Marketplace API
 
 ## Rodar o Container
 - Criar arquivo `.env` na raiz no projeto usando o exemplo `.env.sample`
