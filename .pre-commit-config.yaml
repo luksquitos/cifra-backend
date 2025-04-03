@@ -40,4 +40,5 @@ exclude: |
   (?x)^(
       features/.*/migrations/.*$|
       ^.*/templates/.*$|
+      ^.*/fixtures/.*$|
   )

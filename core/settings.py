@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     # Feature Apps
     "features.authentication",
     "features.user",
+    "features.stores",
 ]
 
 AUTH_USER_MODEL = "user.User"

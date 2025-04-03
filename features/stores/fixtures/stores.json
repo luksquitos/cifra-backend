@@ -1,0 +1,13 @@
+[
+    {"model": "stores.store", "pk": 1, "fields": {"name": "Leroy Merlin"}},
+    {"model": "stores.store", "pk": 2, "fields": {"name": "C&C Casa e Construção"}},
+    {"model": "stores.store", "pk": 3, "fields": {"name": "ConstruAki"}},
+    {"model": "stores.store", "pk": 4, "fields": {"name": "Telhanorte"}},
+    {"model": "stores.store", "pk": 5, "fields": {"name": "Casa do Construtor"}},
+    {"model": "stores.store", "pk": 6, "fields": {"name": "Balaroti Materiais de Construção"}},
+    {"model": "stores.store", "pk": 7, "fields": {"name": "Lojas Quero-Quero"}},
+    {"model": "stores.store", "pk": 8, "fields": {"name": "Drogaria São Paulo - Materiais de Construção"}},
+    {"model": "stores.store", "pk": 9, "fields": {"name": "Madeireira Rio Verde"}},
+    {"model": "stores.store", "pk": 10, "fields": {"name": "Multicoisas Materiais de Construção"}}
+  ]
+  
