@@ -67,8 +67,8 @@ class PriceProductHistory(models.Model):
     created_at = models.DateTimeField() # FIXME Depois de criar os dados falsos, isso precisa ser auto_now_add=True
 
     class Meta:
-        verbose_name = "Produto"
-        verbose_name_plural = "Produtos"
+        verbose_name = "Histórico de preço de produto"
+        verbose_name_plural = "Históricos de preço de produto"
         ordering = ["-price"]
 
 
