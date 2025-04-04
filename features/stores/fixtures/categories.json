@@ -1,0 +1,12 @@
+[
+    {"model": "stores.Category", "pk": 1, "fields": {"name": "Cimento"}},
+    {"model": "stores.Category", "pk": 2, "fields": {"name": "Areia"}},
+    {"model": "stores.Category", "pk": 3, "fields": {"name": "Brita"}},
+    {"model": "stores.Category", "pk": 4, "fields": {"name": "Tijolo"}},
+    {"model": "stores.Category", "pk": 5, "fields": {"name": "Telha"}},
+    {"model": "stores.Category", "pk": 6, "fields": {"name": "Madeira"}},
+    {"model": "stores.Category", "pk": 7, "fields": {"name": "Tubulação"}},
+    {"model": "stores.Category", "pk": 8, "fields": {"name": "Fios e Cabos"}},
+    {"model": "stores.Category", "pk": 9, "fields": {"name": "Ferramentas"}},
+    {"model": "stores.Category", "pk": 10, "fields": {"name": "Tintas"}}
+]
