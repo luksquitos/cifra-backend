@@ -18,6 +18,7 @@ class Store(models.Model):
 
 class Category(models.Model):
     name = models.CharField("Nome", max_length=200)
+    # Precisa do ícone também.
     
     def __str__(self):
         return self.name
@@ -72,14 +73,14 @@ class PriceProductHistory(models.Model):
         ordering = ["-price"]
 
 
-    
-@receiver(models.signals.post_save, sender=Product)
-def create_price_product_history(sender, instance, created, **kwargs):
-    if created:
-        print("Criado ", instance, kwargs.get("update_fields"))
-        # PriceProductHistory.objects.create(
-        #     product=instance, 
-        #     price=instance.price
-        # )
-    print("update_fields ", kwargs.get("update_fields"))
+  
+# @receiver(models.signals.post_save, sender=Product)
+# def create_price_product_history(sender, instance, created, **kwargs):
+#     if created:
+#         print("Criado ", instance, kwargs.get("update_fields"))
+#         # PriceProductHistory.objects.create(
+#         #     product=instance, 
+#         #     price=instance.price
+#         # )
+#     print("update_fields ", kwargs.get("update_fields"))
     
