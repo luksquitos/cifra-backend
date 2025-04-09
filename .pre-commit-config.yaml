@@ -39,6 +39,6 @@ repos:
 exclude: |
   (?x)^(
       features/.*/migrations/.*$|
+      features/.*/fixtures/.*$|
       ^.*/templates/.*$|
-      ^.*/fixtures/.*$|
-  )
+  )$
