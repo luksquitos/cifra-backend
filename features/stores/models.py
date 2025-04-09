@@ -54,7 +54,7 @@ class Product(models.Model):
     class Meta:
         verbose_name = "Produto"
         verbose_name_plural = "Produtos"
-        ordering = ["-price"]
+        ordering = ["price"]
 
 
 class PriceProductHistory(models.Model):
@@ -70,7 +70,7 @@ class PriceProductHistory(models.Model):
     class Meta:
         verbose_name = "Histórico de preço de produto"
         verbose_name_plural = "Históricos de preço de produto"
-        ordering = ["-price"]
+        ordering = ["price"]
 
 
   
