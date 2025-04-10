@@ -1,4 +1,5 @@
 from decimal import Decimal
+from re import sub
 
 from django.core.validators import MinValueValidator
 from django.db import models
@@ -20,15 +21,41 @@ class Store(models.Model):
 class Category(models.Model):
     name = models.CharField("Nome", max_length=200)
     svg = models.TextField("SVG", null=True, blank=True)
-    # Precisa do ícone também.
 
-    # def update_svg(self, **kwargs):
-    #     for key, value in kwargs.items():
-    #         # code
+    def update_svg_attributes(self, **kwargs):
+        if not self.svg:
+            return
 
-    #         pass
+        # These shouldn't be send.
+        kwargs.pop("fill", None)
+        kwargs.pop("d", None)
+        kwargs.pop("xmlns", None)
 
-    #     return
+        # Override fill for <svg>
+        if "fill_svg" in kwargs:
+            self.svg = sub(
+                pattern=r'(<svg[^>]*\s)fill="[^"]*"',
+                repl=rf'\1fill="{kwargs["fill_svg"]}"',
+                string=self.svg,
+            )
+
+        # Override fill for <path>
+        if "fill_path" in kwargs:
+            self.svg = sub(
+                pattern=r'(<path[^>]*\s)fill="[^"]*"',
+                repl=rf'\1fill="{kwargs["fill_path"]}"',
+                string=self.svg,
+            )
+
+        for key, value in kwargs.items():
+            if key in ["fill_svg", "fill_path"]:
+                continue
+
+            self.svg = sub(
+                pattern=rf'({key})="[^"]*"', repl=rf'\1="{str(value)}"', string=self.svg
+            )
+
+        return
 
     def __str__(self):
         return self.name
