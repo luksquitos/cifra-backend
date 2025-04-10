@@ -1,12 +1,90 @@
 [
-    {"model": "stores.Category", "pk": 1, "fields": {"name": "Cimento"}},
-    {"model": "stores.Category", "pk": 2, "fields": {"name": "Areia"}},
-    {"model": "stores.Category", "pk": 3, "fields": {"name": "Brita"}},
-    {"model": "stores.Category", "pk": 4, "fields": {"name": "Tijolo"}},
-    {"model": "stores.Category", "pk": 5, "fields": {"name": "Telha"}},
-    {"model": "stores.Category", "pk": 6, "fields": {"name": "Madeira"}},
-    {"model": "stores.Category", "pk": 7, "fields": {"name": "Tubulação"}},
-    {"model": "stores.Category", "pk": 8, "fields": {"name": "Fios e Cabos"}},
-    {"model": "stores.Category", "pk": 9, "fields": {"name": "Ferramentas"}},
-    {"model": "stores.Category", "pk": 10, "fields": {"name": "Tintas"}}
-]
+    {
+       "model":"stores.category",
+       "pk":1,
+       "fields":{
+          "name":"Cimento",
+          "svg":null
+       }
+    },
+    {
+       "model":"stores.category",
+       "pk":2,
+       "fields":{
+          "name":"Areia",
+          "svg":null
+       }
+    },
+    {
+       "model":"stores.category",
+       "pk":3,
+       "fields":{
+          "name":"Brita",
+          "svg":null
+       }
+    },
+    {
+       "model":"stores.category",
+       "pk":4,
+       "fields":{
+          "name":"Tijolo",
+          "svg":null
+       }
+    },
+    {
+       "model":"stores.category",
+       "pk":5,
+       "fields":{
+          "name":"Telha",
+          "svg":null
+       }
+    },
+    {
+       "model":"stores.category",
+       "pk":6,
+       "fields":{
+          "name":"Madeira",
+          "svg":null
+       }
+    },
+    {
+       "model":"stores.category",
+       "pk":7,
+       "fields":{
+          "name":"Tubulação",
+          "svg":null
+       }
+    },
+    {
+       "model":"stores.category",
+       "pk":8,
+       "fields":{
+          "name":"Fios e Cabos",
+          "svg":null
+       }
+    },
+    {
+       "model":"stores.category",
+       "pk":9,
+       "fields":{
+          "name":"Ferramentas",
+          "svg":null
+       }
+    },
+    {
+       "model":"stores.category",
+       "pk":10,
+       "fields":{
+          "name":"Tintas",
+          "svg":null
+       }
+    },
+    {
+       "model":"stores.category",
+       "pk":11,
+       "fields":{
+          "name":"Teste SVG",
+          "svg":"<svg width=\"20\" height=\"21\" viewBox=\"0 0 20 21\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\r\n<path d=\"M13.75 0.5C15.1172 0.5 16.25 1.63281 16.25 3V5.5C16.25 6.90625 15.1172 8 13.75 8H2.5C1.09375 8 0 6.90625 0 5.5V3C0 1.63281 1.09375 0.5 2.5 0.5H13.75ZM13.75 2.375H2.5C2.14844 2.375 1.875 2.6875 1.875 3V5.5C1.875 5.85156 2.14844 6.125 2.5 6.125H13.75C14.0625 6.125 14.375 5.85156 14.375 5.5V3C14.375 2.6875 14.0625 2.375 13.75 2.375ZM6.25 14.25C6.25 13.5859 6.79688 13 7.5 13H7.8125V12.375C7.8125 10.8516 9.0625 9.5625 10.625 9.5625H16.5625C17.4219 9.5625 18.125 8.89844 18.125 8V6.125C18.125 5.73438 17.8516 5.38281 17.5 5.26562V3.35156C18.9062 3.50781 20 4.67969 20 6.125V8C20 9.91406 18.4375 11.4375 16.5625 11.4375H10.625C10.0781 11.4375 9.6875 11.8672 9.6875 12.375V13H10C10.6641 13 11.25 13.5859 11.25 14.25V19.25C11.25 19.9531 10.6641 20.5 10 20.5H7.5C6.79688 20.5 6.25 19.9531 6.25 19.25V14.25Z\" fill=\"#FED641\"/>\r\n</svg>"
+       }
+    }
+ ]
