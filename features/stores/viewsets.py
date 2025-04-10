@@ -34,3 +34,13 @@ class CategoryViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = serializers.CategorySerializer
     queryset = models.Category.objects.all()
     permission_classes = []
+    pagination_class = None
+
+    def get_serializer_class(self):
+        # FIXME Deve ser usado apenas no desenvolvimento para "ajuste rápido"
+
+        query_params = self.request.query_params
+        if query_params:
+            return serializers.CategorySvgSerializer
+
+        return super().get_serializer_class()
