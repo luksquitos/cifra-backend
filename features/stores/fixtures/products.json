@@ -1,0 +1,23 @@
+[
+    {"model": "stores.product", "pk": 1, "fields": {"store": 1, "name": "Cimento Votorantim", "about": "Cimento de alta resistência para obras", "category": 1, "price": 35.90}},
+    {"model": "stores.product", "pk": 2, "fields": {"store": 1, "name": "Areia Fina", "about": "Areia fina para assentamento", "category": 2, "price": 58.30}},
+    {"model": "stores.product", "pk": 3, "fields": {"store": 1, "name": "Tijolo Cerâmico", "about": "Tijolos de qualidade para construção", "category": 3, "price": 0.90}},
+    {"model": "stores.product", "pk": 4, "fields": {"store": 1, "name": "Pedra Brita 1", "about": "Pedra brita para concretagem", "category": 4, "price": 95.00}},
+    {"model": "stores.product", "pk": 5, "fields": {"store": 1, "name": "Cimento Votorantim", "about": "Cimento de alta resistência para obras", "category": 1, "price": 36.50}},
+    {"model": "stores.product", "pk": 6, "fields": {"store": 2, "name": "Cimento Votorantim", "about": "Cimento de alta resistência para obras", "category": 1, "price": 33.80}},
+    {"model": "stores.product", "pk": 7, "fields": {"store": 2, "name": "Areia Fina", "about": "Areia fina para assentamento", "category": 2, "price": 60.20}},
+    {"model": "stores.product", "pk": 8, "fields": {"store": 2, "name": "Tijolo Cerâmico", "about": "Tijolos de qualidade para construção", "category": 3, "price": 1.10}},
+    {"model": "stores.product", "pk": 9, "fields": {"store": 2, "name": "Pedra Brita 1", "about": "Pedra brita para concretagem", "category": 4, "price": 96.00}},
+    {"model": "stores.product", "pk": 10, "fields": {"store": 2, "name": "Cimento Votorantim", "about": "Cimento de alta resistência para obras", "category": 1, "price": 34.90}},
+    {"model": "stores.product", "pk": 11, "fields": {"store": 3, "name": "Tijolo Cerâmico", "about": "Tijolos de qualidade para construção", "category": 3, "price": 0.85}},
+    {"model": "stores.product", "pk": 12, "fields": {"store": 3, "name": "Areia Fina", "about": "Areia fina para assentamento", "category": 2, "price": 57.00}},
+    {"model": "stores.product", "pk": 13, "fields": {"store": 3, "name": "Cimento Votorantim", "about": "Cimento de alta resistência para obras", "category": 1, "price": 35.30}},
+    {"model": "stores.product", "pk": 14, "fields": {"store": 3, "name": "Pedra Brita 1", "about": "Pedra brita para concretagem", "category": 4, "price": 93.50}},
+    {"model": "stores.product", "pk": 15, "fields": {"store": 3, "name": "Cimento Votorantim", "about": "Cimento de alta resistência para obras", "category": 1, "price": 34.00}},
+    {"model": "stores.product", "pk": 16, "fields": {"store": 4, "name": "Cimento Votorantim", "about": "Cimento de alta resistência para obras", "category": 1, "price": 36.00}},
+    {"model": "stores.product", "pk": 17, "fields": {"store": 4, "name": "Areia Fina", "about": "Areia fina para assentamento", "category": 2, "price": 59.00}},
+    {"model": "stores.product", "pk": 18, "fields": {"store": 4, "name": "Pedra Brita 1", "about": "Pedra brita para concretagem", "category": 4, "price": 97.00}},
+    {"model": "stores.product", "pk": 19, "fields": {"store": 4, "name": "Tijolo Cerâmico", "about": "Tijolos de qualidade para construção", "category": 3, "price": 1.00}},
+    {"model": "stores.product", "pk": 20, "fields": {"store": 4, "name": "Areia Fina", "about": "Areia fina para assentamento", "category": 2, "price": 57.50}}
+  ]
+  

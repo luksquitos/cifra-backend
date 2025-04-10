@@ -84,6 +84,7 @@ class ParameterizedFilterBackend(BaseFilterBackend):
             models.PositiveSmallIntegerField: OpenApiTypes.INT,
             models.FloatField: OpenApiTypes.FLOAT,
             models.DecimalField: OpenApiTypes.DECIMAL,
+            models.ForeignKey: OpenApiTypes.STR,
         }
 
         params = []

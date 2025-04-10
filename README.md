@@ -2,8 +2,6 @@
 
 ## Rodar o Container
 - Criar arquivo `.env` na raiz no projeto usando o exemplo `.env.sample`
-
-## Rodar o container
 Subir o container: ```docker compose up --build```
 Derrubar o container: `docker compose down`
 
