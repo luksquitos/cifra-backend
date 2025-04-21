@@ -32,6 +32,19 @@ class ProductViewSet(viewsets.ReadOnlyModelViewSet):
 
         return Response(serializer.data, status=status.HTTP_200_OK)
 
+    @action(detail=True, methods=["get"])
+    def historic(self, request, pk):
+        # Filters ?
+        # Create a new ViewSet with NestedSimpleRouter instead.
+        instance = self.get_object()
+        queryset = models.PriceProductHistory.objects.select_related("product").filter(
+            product=instance
+        )
+
+        serializer = serializers.PriceHistorySerializer(queryset, many=True)
+
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
 
 @extend_schema_view(
     list=extend_schema(

@@ -39,3 +39,9 @@ class CategorySvgSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Category
         fields = "__all__"
+
+
+class PriceHistorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.PriceProductHistory
+        exclude = ["id", "product"]
