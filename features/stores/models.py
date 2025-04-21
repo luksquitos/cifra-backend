@@ -3,8 +3,7 @@ from re import sub
 
 from django.core.validators import MinValueValidator
 from django.db import models
-
-# from django.dispatch import receiver
+from django.dispatch import receiver
 
 
 class Store(models.Model):
@@ -87,7 +86,9 @@ class Product(models.Model):
         decimal_places=2,
         validators=[MinValueValidator(Decimal("0.01"))],
     )
-    image = models.ImageField("Imagem", upload_to=product_directory_path, null=True)
+    image = models.ImageField(
+        "Imagem", upload_to=product_directory_path, null=True, blank=True
+    )
 
     def __str__(self):
         return f"{self.name} R${self.price}"
@@ -111,9 +112,7 @@ class PriceProductHistory(models.Model):
         decimal_places=2,
         validators=[MinValueValidator(Decimal("0.01"))],
     )
-    created_at = (
-        models.DateTimeField()
-    )  # FIXME Depois de criar os dados falsos, isso precisa ser auto_now_add=True
+    created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         verbose_name = "Histórico de preço de produto"
@@ -121,12 +120,18 @@ class PriceProductHistory(models.Model):
         ordering = ["price"]
 
 
-# @receiver(models.signals.post_save, sender=Product)
-# def create_price_product_history(sender, instance, created, **kwargs):
-#     if created:
-#         print("Criado ", instance, kwargs.get("update_fields"))
-#         # PriceProductHistory.objects.create(
-#         #     product=instance,
-#         #     price=instance.price
-#         # )
-#     print("update_fields ", kwargs.get("update_fields"))
+@receiver(models.signals.post_save, sender=Product)
+def create_price_product_history(sender, instance, created, **kwargs):
+    value = instance.price
+
+    if not created:
+        last_history = (
+            PriceProductHistory.objects.select_related("product")
+            .filter(product=instance)
+            .first()
+        )
+
+        if last_history.price == value:
+            return
+
+    PriceProductHistory.objects.create(product=instance, price=value)
