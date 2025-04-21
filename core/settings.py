@@ -1,4 +1,5 @@
 from pathlib import Path
+
 import environ
 
 env = environ.Env(
@@ -23,6 +24,9 @@ if env("CSRF_TRUSTED_ORIGINS"):
     CSRF_TRUSTED_ORIGINS = env("CSRF_TRUSTED_ORIGINS")
 
 INSTALLED_APPS = [
+    # Daisy UI Admin
+    "django_daisy",
+    "django.contrib.humanize",
     # Original Django Apps
     "django.contrib.admin",
     "django.contrib.auth",
@@ -38,7 +42,7 @@ INSTALLED_APPS = [
     # Core Configurations
     "core.api",
     "core.swagger",
-    'image_uploader_widget',
+    "image_uploader_widget",
     # Feature Apps
     "features.authentication",
     "features.user",
@@ -130,7 +134,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = "static/"
+STATIC_URL = "/static/"
 MEDIA_URL = "/media/"
 
 
@@ -171,4 +175,26 @@ SPECTACULAR_SETTINGS = {
             "description": "Reúne endpoints para lidar com os usuários da plataforma.",
         },
     ],
+}
+
+DAISY_SETTINGS = {
+    "SITE_TITLE": "Cifra Marketplace Admin",  # The title of the site
+    "SITE_HEADER": "Administração",  # Header text displayed in the admin panel
+    # 'INDEX_TITLE': 'Hi, welcome to your dashboard',  # The title for the index page of dashboard
+    # 'SITE_LOGO': '/static/admin/cifra-logo.png',  # Path to the logo image displayed in the sidebar
+    "EXTRA_STYLES": [],  # List of extra stylesheets to be loaded in base.html (optional)
+    "EXTRA_SCRIPTS": [],  # List of extra script URLs to be loaded in base.html (optional)
+    "LOAD_FULL_STYLES": False,  # If True, loads full DaisyUI components in the admin (useful if you have custom template overrides)
+    "SHOW_CHANGELIST_FILTER": False,  # If True, the filter sidebar will open by default on changelist views
+    "DONT_SUPPORT_ME": False,  # Hide github link in sidebar footer
+    "SIDEBAR_FOOTNOTE": "",  # add footnote to sidebar
+    "APPS_REORDER": {
+        # Custom configurations for third-party apps that can't be modified directly in their `apps.py`
+        "auth": {
+            "icon": "fa-solid fa-person-military-pointing",  # FontAwesome icon for the 'auth' app
+            "name": "Authentication",  # Custom name for the 'auth' app
+            "hide": False,  # Whether to hide the 'auth' app from the sidebar (set to True to hide)
+            "divider_title": "Auth",  # Divider title for the 'auth' section
+        },
+    },
 }

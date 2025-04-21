@@ -28,6 +28,7 @@ services:
       - ./core:/app/core
       - ./features:/app/features
       - ./media:/app/media
+      - ./static:/app/static
     env_file:
       .env
 
