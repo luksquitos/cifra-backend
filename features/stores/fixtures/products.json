@@ -1,23 +1,1432 @@
 [
-    {"model": "stores.product", "pk": 1, "fields": {"store": 1, "name": "Cimento Votorantim", "about": "Cimento de alta resistência para obras", "category": 1, "price": 35.90}},
-    {"model": "stores.product", "pk": 2, "fields": {"store": 1, "name": "Areia Fina", "about": "Areia fina para assentamento", "category": 2, "price": 58.30}},
-    {"model": "stores.product", "pk": 3, "fields": {"store": 1, "name": "Tijolo Cerâmico", "about": "Tijolos de qualidade para construção", "category": 3, "price": 0.90}},
-    {"model": "stores.product", "pk": 4, "fields": {"store": 1, "name": "Pedra Brita 1", "about": "Pedra brita para concretagem", "category": 4, "price": 95.00}},
-    {"model": "stores.product", "pk": 5, "fields": {"store": 1, "name": "Cimento Votorantim", "about": "Cimento de alta resistência para obras", "category": 1, "price": 36.50}},
-    {"model": "stores.product", "pk": 6, "fields": {"store": 2, "name": "Cimento Votorantim", "about": "Cimento de alta resistência para obras", "category": 1, "price": 33.80}},
-    {"model": "stores.product", "pk": 7, "fields": {"store": 2, "name": "Areia Fina", "about": "Areia fina para assentamento", "category": 2, "price": 60.20}},
-    {"model": "stores.product", "pk": 8, "fields": {"store": 2, "name": "Tijolo Cerâmico", "about": "Tijolos de qualidade para construção", "category": 3, "price": 1.10}},
-    {"model": "stores.product", "pk": 9, "fields": {"store": 2, "name": "Pedra Brita 1", "about": "Pedra brita para concretagem", "category": 4, "price": 96.00}},
-    {"model": "stores.product", "pk": 10, "fields": {"store": 2, "name": "Cimento Votorantim", "about": "Cimento de alta resistência para obras", "category": 1, "price": 34.90}},
-    {"model": "stores.product", "pk": 11, "fields": {"store": 3, "name": "Tijolo Cerâmico", "about": "Tijolos de qualidade para construção", "category": 3, "price": 0.85}},
-    {"model": "stores.product", "pk": 12, "fields": {"store": 3, "name": "Areia Fina", "about": "Areia fina para assentamento", "category": 2, "price": 57.00}},
-    {"model": "stores.product", "pk": 13, "fields": {"store": 3, "name": "Cimento Votorantim", "about": "Cimento de alta resistência para obras", "category": 1, "price": 35.30}},
-    {"model": "stores.product", "pk": 14, "fields": {"store": 3, "name": "Pedra Brita 1", "about": "Pedra brita para concretagem", "category": 4, "price": 93.50}},
-    {"model": "stores.product", "pk": 15, "fields": {"store": 3, "name": "Cimento Votorantim", "about": "Cimento de alta resistência para obras", "category": 1, "price": 34.00}},
-    {"model": "stores.product", "pk": 16, "fields": {"store": 4, "name": "Cimento Votorantim", "about": "Cimento de alta resistência para obras", "category": 1, "price": 36.00}},
-    {"model": "stores.product", "pk": 17, "fields": {"store": 4, "name": "Areia Fina", "about": "Areia fina para assentamento", "category": 2, "price": 59.00}},
-    {"model": "stores.product", "pk": 18, "fields": {"store": 4, "name": "Pedra Brita 1", "about": "Pedra brita para concretagem", "category": 4, "price": 97.00}},
-    {"model": "stores.product", "pk": 19, "fields": {"store": 4, "name": "Tijolo Cerâmico", "about": "Tijolos de qualidade para construção", "category": 3, "price": 1.00}},
-    {"model": "stores.product", "pk": 20, "fields": {"store": 4, "name": "Areia Fina", "about": "Areia fina para assentamento", "category": 2, "price": 57.50}}
-  ]
-  
+  {
+     "model":"stores.product",
+     "pk":1,
+     "fields":{
+        "store":1,
+        "category":1,
+        "name":"Piso Cerâmico 45x45cm Branco",
+        "about":"Piso cerâmico para áreas internas, acabamento fosco.",
+        "quantity":100,
+        "price":"29.90",
+        "image":"leroy-merlin/pisos-e-revestimentos/Piso_Cerâmico_45x45cm_Branco-piso_ceramico_cimenticio_OGxHqAB.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":2,
+     "fields":{
+        "store":1,
+        "category":1,
+        "name":"Revestimento Acetinado 32x57cm",
+        "about":"Ideal para cozinhas e banheiros, fácil de limpar.",
+        "quantity":75,
+        "price":"34.90",
+        "image":"leroy-merlin/pisos-e-revestimentos/Revestimento_Acetinado_32x57cm-revestimento-acetinado.png"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":3,
+     "fields":{
+        "store":1,
+        "category":1,
+        "name":"Piso Porcelanato Polido 60x60cm",
+        "about":"Acabamento sofisticado para ambientes internos.",
+        "quantity":60,
+        "price":"49.90",
+        "image":"leroy-merlin/pisos-e-revestimentos/Piso_Porcelanato_Polido_60x60cm-porcelanato_acetinado_PYRyOl4.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":4,
+     "fields":{
+        "store":1,
+        "category":1,
+        "name":"Pastilha de Vidro Decorativa",
+        "about":"Aplicação em faixas decorativas de paredes.",
+        "quantity":120,
+        "price":"19.90",
+        "image":"leroy-merlin/pisos-e-revestimentos/Pastilha_de_Vidro_Decorativa-pastilha-vidro-decorativa.png"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":5,
+     "fields":{
+        "store":1,
+        "category":1,
+        "name":"Rodapé em PVC Branco 10cm",
+        "about":"Rodapé resistente à umidade, fácil de instalar.",
+        "quantity":200,
+        "price":"14.50",
+        "image":"leroy-merlin/pisos-e-revestimentos/Rodapé_em_PVC_Branco_10cm-rodape_de_pvc_branco_neve_1_BKaYD57.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":6,
+     "fields":{
+        "store":1,
+        "category":2,
+        "name":"Cimento CP-II 50kg",
+        "about":"Cimento para obras em geral, alta resistência.",
+        "quantity":150,
+        "price":"39.90",
+        "image":"leroy-merlin/materiais-básicos/Cimento_CP-II_50kg-cimento_cp_ii_f_32_todas_as_obras_50kg_aacRKeM.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":7,
+     "fields":{
+        "store":1,
+        "category":2,
+        "name":"Areia Média Lavada 20kg",
+        "about":"Areia para assentamento e reboco.",
+        "quantity":100,
+        "price":"11.90",
+        "image":"leroy-merlin/materiais-básicos/Areia_Média_Lavada_20kg-areia_media_lavada_saco_20kg_grup_jF8xMVl.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":8,
+     "fields":{
+        "store":1,
+        "category":2,
+        "name":"Brita 1 Ensacada 20kg",
+        "about":"Ideal para concreto e drenagem.",
+        "quantity":100,
+        "price":"13.50",
+        "image":"leroy-merlin/materiais-básicos/Brita_1_Ensacada_20kg-pedra_britada_1_saco_20kg_rl_areia__L7yyQ8R.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":9,
+     "fields":{
+        "store":1,
+        "category":2,
+        "name":"Bloco de Concreto 39x14x19cm",
+        "about":"Bloco estrutural para alvenaria.",
+        "quantity":500,
+        "price":"3.20",
+        "image":"leroy-merlin/materiais-básicos/Bloco_de_Concreto_39x14x19cm-bloco_de_concreto_vedacao_14_4Akjhtj.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":10,
+     "fields":{
+        "store":1,
+        "category":2,
+        "name":"Vergalhão CA-50 8mm 12m",
+        "about":"Usado em estruturas de concreto armado.",
+        "quantity":80,
+        "price":"79.90",
+        "image":"leroy-merlin/materiais-básicos/Vergalhão_CA-50_8mm_12m-vergalhao-CA.png"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":11,
+     "fields":{
+        "store":1,
+        "category":3,
+        "name":"Tinta Acrílica Fosca 18L Branco Neve",
+        "about":"Tinta para paredes internas, ótima cobertura.",
+        "quantity":40,
+        "price":"149.90",
+        "image":"leroy-merlin/tintas-e-acessórios/Tinta_Acrílica_Fosca_18L_Branco_Neve-61NNEAkaMpL._AC_SL1181_.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":12,
+     "fields":{
+        "store":1,
+        "category":3,
+        "name":"Rolo de Pintura Antigota 23cm",
+        "about":"Ideal para pintura uniforme em paredes.",
+        "quantity":100,
+        "price":"17.90",
+        "image":"leroy-merlin/tintas-e-acessórios/Rolo_de_Pintura_Antigota_23cm-61mcj5E2kQL._AC_SL1000_.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":13,
+     "fields":{
+        "store":1,
+        "category":3,
+        "name":"Pincel Trincha 2''",
+        "about":"Para acabamentos e recortes com tinta.",
+        "quantity":120,
+        "price":"9.90",
+        "image":"leroy-merlin/tintas-e-acessórios/Pincel_Trincha_2-1010037_1_1557425396.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":14,
+     "fields":{
+        "store":1,
+        "category":3,
+        "name":"Fita Crepe 24mm x 50m",
+        "about":"Protege superfícies durante a pintura.",
+        "quantity":90,
+        "price":"7.50",
+        "image":"leroy-merlin/tintas-e-acessórios/Fita_Crepe_24mm_x_50m-51AMRGJ5uL._AC_SY300_SX300_.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":15,
+     "fields":{
+        "store":1,
+        "category":3,
+        "name":"Bandeja para Tinta 23cm",
+        "about":"Prática e lavável, usada com rolos.",
+        "quantity":150,
+        "price":"5.90",
+        "image":"leroy-merlin/tintas-e-acessórios/Bandeja_para_Tinta_23cm-770735_2_1674674557.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":16,
+     "fields":{
+        "store":1,
+        "category":4,
+        "name":"Porta de Madeira Lisa 210x70cm",
+        "about":"Porta interna simples, acabamento cru.",
+        "quantity":40,
+        "price":"189.90",
+        "image":"leroy-merlin/portas-e-janelas/Porta_de_Madeira_Lisa_210x70cm-folha_de_porta_madeira_deco_u0azV6g.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":17,
+     "fields":{
+        "store":1,
+        "category":4,
+        "name":"Porta Sanfonada PVC Branca",
+        "about":"Ideal para banheiros e lavanderias.",
+        "quantity":50,
+        "price":"99.90",
+        "image":"leroy-merlin/portas-e-janelas/Porta_Sanfonada_PVC_Branca-porta-sanfonada-pvc-210x85cm-ci_BxFoxTz.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":18,
+     "fields":{
+        "store":1,
+        "category":4,
+        "name":"Janela de Alumínio 100x100cm",
+        "about":"Com vidro temperado e veneziana.",
+        "quantity":35,
+        "price":"259.90",
+        "image":"leroy-merlin/portas-e-janelas/Janela_de_Alumínio_100x100cm-janela-aluminio.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":19,
+     "fields":{
+        "store":1,
+        "category":4,
+        "name":"Veneziana de Alumínio 4 Folhas",
+        "about":"Ideal para quartos e salas.",
+        "quantity":30,
+        "price":"329.90",
+        "image":"leroy-merlin/portas-e-janelas/Veneziana_de_Alumínio_4_Folhas-janela_de_aluminio_venezian_3ryf5Q7.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":20,
+     "fields":{
+        "store":1,
+        "category":4,
+        "name":"Guarnição de Madeira 5cm",
+        "about":"Acabamento elegante para portas.",
+        "quantity":100,
+        "price":"21.90",
+        "image":"leroy-merlin/portas-e-janelas/Guarnição_de_Madeira_5cm-guarnicao-porta.png"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":21,
+     "fields":{
+        "store":2,
+        "category":1,
+        "name":"Piso Cerâmico 45x45cm Branco",
+        "about":"Modelo econômico com acabamento fosco.",
+        "quantity":80,
+        "price":"27.50",
+        "image":"leroy-merlin/pisos-e-revestimentos/Piso_Cerâmico_45x45cm_Branco-piso_ceramico_cimenticio_OGxHqAB.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":22,
+     "fields":{
+        "store":2,
+        "category":1,
+        "name":"Revestimento Acetinado 32x57cm",
+        "about":"Design moderno e fácil de aplicar.",
+        "quantity":60,
+        "price":"32.00",
+        "image":"leroy-merlin/pisos-e-revestimentos/Revestimento_Acetinado_32x57cm-revestimento-acetinado.png"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":23,
+     "fields":{
+        "store":2,
+        "category":1,
+        "name":"Piso Porcelanato Polido 60x60cm",
+        "about":"Ideal para salas e corredores.",
+        "quantity":50,
+        "price":"52.00",
+        "image":"leroy-merlin/pisos-e-revestimentos/Piso_Porcelanato_Polido_60x60cm-porcelanato_acetinado_PYRyOl4.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":24,
+     "fields":{
+        "store":2,
+        "category":1,
+        "name":"Pastilha de Vidro Decorativa",
+        "about":"Destaque para detalhes em banheiros.",
+        "quantity":100,
+        "price":"21.00",
+        "image":"leroy-merlin/pisos-e-revestimentos/Pastilha_de_Vidro_Decorativa-pastilha-vidro-decorativa.png"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":25,
+     "fields":{
+        "store":2,
+        "category":1,
+        "name":"Rodapé em PVC Branco 10cm",
+        "about":"Durável e de fácil manutenção.",
+        "quantity":180,
+        "price":"15.00",
+        "image":"leroy-merlin/pisos-e-revestimentos/Rodapé_em_PVC_Branco_10cm-rodape_de_pvc_branco_neve_1_BKaYD57.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":26,
+     "fields":{
+        "store":2,
+        "category":2,
+        "name":"Cimento CP-II 50kg",
+        "about":"Ideal para fundações e estruturas.",
+        "quantity":130,
+        "price":"41.00",
+        "image":"leroy-merlin/materiais-básicos/Cimento_CP-II_50kg-cimento_cp_ii_f_32_todas_as_obras_50kg_aacRKeM.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":27,
+     "fields":{
+        "store":2,
+        "category":2,
+        "name":"Areia Média Lavada 20kg",
+        "about":"Areia seca para alvenaria e assentamento.",
+        "quantity":90,
+        "price":"12.50",
+        "image":"leroy-merlin/materiais-básicos/Areia_Média_Lavada_20kg-areia_media_lavada_saco_20kg_grup_jF8xMVl.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":28,
+     "fields":{
+        "store":2,
+        "category":2,
+        "name":"Brita 1 Ensacada 20kg",
+        "about":"Utilizada em obras de drenagem.",
+        "quantity":85,
+        "price":"14.00",
+        "image":"leroy-merlin/materiais-básicos/Brita_1_Ensacada_20kg-pedra_britada_1_saco_20kg_rl_areia__L7yyQ8R.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":29,
+     "fields":{
+        "store":2,
+        "category":2,
+        "name":"Bloco de Concreto 39x14x19cm",
+        "about":"Boa resistência e isolamento térmico.",
+        "quantity":400,
+        "price":"3.40",
+        "image":"leroy-merlin/materiais-básicos/Bloco_de_Concreto_39x14x19cm-bloco_de_concreto_vedacao_14_4Akjhtj.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":30,
+     "fields":{
+        "store":2,
+        "category":2,
+        "name":"Vergalhão CA-50 8mm 12m",
+        "about":"Alta performance para vigas e colunas.",
+        "quantity":70,
+        "price":"82.00",
+        "image":"leroy-merlin/materiais-básicos/Vergalhão_CA-50_8mm_12m-vergalhao-CA.png"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":31,
+     "fields":{
+        "store":2,
+        "category":3,
+        "name":"Tinta Acrílica Fosca 18L Branco Neve",
+        "about":"Alta cobertura e secagem rápida.",
+        "quantity":35,
+        "price":"155.00",
+        "image":"leroy-merlin/tintas-e-acessórios/Tinta_Acrílica_Fosca_18L_Branco_Neve-61NNEAkaMpL._AC_SL1181_.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":32,
+     "fields":{
+        "store":2,
+        "category":3,
+        "name":"Rolo de Pintura Antigota 23cm",
+        "about":"Para acabamentos mais uniformes e limpos.",
+        "quantity":110,
+        "price":"18.50",
+        "image":"leroy-merlin/tintas-e-acessórios/Rolo_de_Pintura_Antigota_23cm-61mcj5E2kQL._AC_SL1000_.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":33,
+     "fields":{
+        "store":2,
+        "category":3,
+        "name":"Pincel Trincha 2''",
+        "about":"Ideal para recortes de precisão.",
+        "quantity":100,
+        "price":"10.50",
+        "image":"leroy-merlin/tintas-e-acessórios/Pincel_Trincha_2-1010037_1_1557425396.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":34,
+     "fields":{
+        "store":2,
+        "category":3,
+        "name":"Fita Crepe 24mm x 50m",
+        "about":"Adere bem e não deixa resíduos.",
+        "quantity":85,
+        "price":"8.00",
+        "image":"leroy-merlin/tintas-e-acessórios/Fita_Crepe_24mm_x_50m-51AMRGJ5uL._AC_SY300_SX300_.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":35,
+     "fields":{
+        "store":2,
+        "category":3,
+        "name":"Bandeja para Tinta 23cm",
+        "about":"Resistente e reutilizável.",
+        "quantity":140,
+        "price":"6.50",
+        "image":"leroy-merlin/tintas-e-acessórios/Bandeja_para_Tinta_23cm-770735_2_1674674557.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":36,
+     "fields":{
+        "store":2,
+        "category":4,
+        "name":"Porta de Madeira Lisa 210x70cm",
+        "about":"Porta básica para ambientes internos.",
+        "quantity":30,
+        "price":"195.00",
+        "image":"leroy-merlin/portas-e-janelas/Porta_de_Madeira_Lisa_210x70cm-folha_de_porta_madeira_deco_u0azV6g.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":37,
+     "fields":{
+        "store":2,
+        "category":4,
+        "name":"Porta Sanfonada PVC Branca",
+        "about":"Compacta e prática para pequenos espaços.",
+        "quantity":40,
+        "price":"98.00",
+        "image":"leroy-merlin/portas-e-janelas/Porta_Sanfonada_PVC_Branca-porta-sanfonada-pvc-210x85cm-ci_BxFoxTz.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":38,
+     "fields":{
+        "store":2,
+        "category":4,
+        "name":"Janela de Alumínio 100x100cm",
+        "about":"Janela prática com boa ventilação.",
+        "quantity":30,
+        "price":"265.00",
+        "image":"leroy-merlin/portas-e-janelas/Janela_de_Alumínio_100x100cm-janela-aluminio.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":39,
+     "fields":{
+        "store":2,
+        "category":4,
+        "name":"Veneziana de Alumínio 4 Folhas",
+        "about":"Durabilidade e controle de luminosidade.",
+        "quantity":25,
+        "price":"335.00",
+        "image":"leroy-merlin/portas-e-janelas/Veneziana_de_Alumínio_4_Folhas-janela_de_aluminio_venezian_3ryf5Q7.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":40,
+     "fields":{
+        "store":2,
+        "category":4,
+        "name":"Guarnição de Madeira 5cm",
+        "about":"Para acabamentos sofisticados em portas.",
+        "quantity":90,
+        "price":"22.50",
+        "image":"leroy-merlin/portas-e-janelas/Guarnição_de_Madeira_5cm-guarnicao-porta.png"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":31,
+     "fields":{
+        "store":2,
+        "category":3,
+        "name":"Tinta Acrílica Fosca 18L Branco Neve",
+        "about":"Alta cobertura e secagem rápida.",
+        "quantity":35,
+        "price":"155.00",
+        "image":"leroy-merlin/tintas-e-acessórios/Tinta_Acrílica_Fosca_18L_Branco_Neve-61NNEAkaMpL._AC_SL1181_.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":32,
+     "fields":{
+        "store":2,
+        "category":3,
+        "name":"Rolo de Pintura Antigota 23cm",
+        "about":"Para acabamentos mais uniformes e limpos.",
+        "quantity":110,
+        "price":"18.50",
+        "image":"leroy-merlin/tintas-e-acessórios/Rolo_de_Pintura_Antigota_23cm-61mcj5E2kQL._AC_SL1000_.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":33,
+     "fields":{
+        "store":2,
+        "category":3,
+        "name":"Pincel Trincha 2''",
+        "about":"Ideal para recortes de precisão.",
+        "quantity":100,
+        "price":"10.50",
+        "image":"leroy-merlin/tintas-e-acessórios/Pincel_Trincha_2-1010037_1_1557425396.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":34,
+     "fields":{
+        "store":2,
+        "category":3,
+        "name":"Fita Crepe 24mm x 50m",
+        "about":"Adere bem e não deixa resíduos.",
+        "quantity":85,
+        "price":"8.00",
+        "image":"leroy-merlin/tintas-e-acessórios/Fita_Crepe_24mm_x_50m-51AMRGJ5uL._AC_SY300_SX300_.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":35,
+     "fields":{
+        "store":2,
+        "category":3,
+        "name":"Bandeja para Tinta 23cm",
+        "about":"Resistente e reutilizável.",
+        "quantity":140,
+        "price":"6.50",
+        "image":"leroy-merlin/tintas-e-acessórios/Bandeja_para_Tinta_23cm-770735_2_1674674557.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":36,
+     "fields":{
+        "store":2,
+        "category":4,
+        "name":"Porta de Madeira Lisa 210x70cm",
+        "about":"Porta básica para ambientes internos.",
+        "quantity":30,
+        "price":"195.00",
+        "image":"leroy-merlin/portas-e-janelas/Porta_de_Madeira_Lisa_210x70cm-folha_de_porta_madeira_deco_u0azV6g.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":37,
+     "fields":{
+        "store":2,
+        "category":4,
+        "name":"Porta Sanfonada PVC Branca",
+        "about":"Compacta e prática para pequenos espaços.",
+        "quantity":40,
+        "price":"98.00",
+        "image":"leroy-merlin/portas-e-janelas/Porta_Sanfonada_PVC_Branca-porta-sanfonada-pvc-210x85cm-ci_BxFoxTz.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":38,
+     "fields":{
+        "store":2,
+        "category":4,
+        "name":"Janela de Alumínio 100x100cm",
+        "about":"Janela prática com boa ventilação.",
+        "quantity":30,
+        "price":"265.00",
+        "image":"leroy-merlin/portas-e-janelas/Janela_de_Alumínio_100x100cm-janela-aluminio.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":39,
+     "fields":{
+        "store":2,
+        "category":4,
+        "name":"Veneziana de Alumínio 4 Folhas",
+        "about":"Durabilidade e controle de luminosidade.",
+        "quantity":25,
+        "price":"335.00",
+        "image":"leroy-merlin/portas-e-janelas/Veneziana_de_Alumínio_4_Folhas-janela_de_aluminio_venezian_3ryf5Q7.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":40,
+     "fields":{
+        "store":2,
+        "category":4,
+        "name":"Guarnição de Madeira 5cm",
+        "about":"Para acabamentos sofisticados em portas.",
+        "quantity":90,
+        "price":"22.50",
+        "image":"leroy-merlin/portas-e-janelas/Guarnição_de_Madeira_5cm-guarnicao-porta.png"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":41,
+     "fields":{
+        "store":3,
+        "category":1,
+        "name":"Piso Cerâmico 45x45cm Branco",
+        "about":"Acabamento fosco ideal para áreas internas secas.",
+        "quantity":80,
+        "price":"28.90",
+        "image":"leroy-merlin/pisos-e-revestimentos/Piso_Cerâmico_45x45cm_Branco-piso_ceramico_cimenticio_OGxHqAB.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":42,
+     "fields":{
+        "store":3,
+        "category":1,
+        "name":"Revestimento Acetinado 32x57cm",
+        "about":"Superfície fácil de limpar, com toque acetinado.",
+        "quantity":60,
+        "price":"36.00",
+        "image":"leroy-merlin/pisos-e-revestimentos/Revestimento_Acetinado_32x57cm-revestimento-acetinado.png"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":43,
+     "fields":{
+        "store":3,
+        "category":1,
+        "name":"Piso Porcelanato Polido 60x60cm",
+        "about":"Ideal para ambientes sofisticados.",
+        "quantity":50,
+        "price":"52.90",
+        "image":"leroy-merlin/pisos-e-revestimentos/Piso_Porcelanato_Polido_60x60cm-porcelanato_acetinado_PYRyOl4.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":44,
+     "fields":{
+        "store":3,
+        "category":1,
+        "name":"Pastilha de Vidro Decorativa",
+        "about":"Destaque moderno para ambientes internos.",
+        "quantity":100,
+        "price":"20.50",
+        "image":"leroy-merlin/pisos-e-revestimentos/Pastilha_de_Vidro_Decorativa-pastilha-vidro-decorativa.png"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":45,
+     "fields":{
+        "store":3,
+        "category":1,
+        "name":"Rodapé em PVC Branco 10cm",
+        "about":"Durável e fácil de instalar, ótimo acabamento.",
+        "quantity":180,
+        "price":"15.00",
+        "image":"leroy-merlin/pisos-e-revestimentos/Rodapé_em_PVC_Branco_10cm-rodape_de_pvc_branco_neve_1_BKaYD57.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":46,
+     "fields":{
+        "store":3,
+        "category":2,
+        "name":"Cimento CP-II 50kg",
+        "about":"Indicado para fundações e lajes.",
+        "quantity":120,
+        "price":"41.00",
+        "image":"leroy-merlin/materiais-básicos/Cimento_CP-II_50kg-cimento_cp_ii_f_32_todas_as_obras_50kg_aacRKeM.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":47,
+     "fields":{
+        "store":3,
+        "category":2,
+        "name":"Areia Média Lavada 20kg",
+        "about":"Areia limpa para rebocos finos.",
+        "quantity":90,
+        "price":"12.50",
+        "image":"leroy-merlin/materiais-básicos/Areia_Média_Lavada_20kg-areia_media_lavada_saco_20kg_grup_jF8xMVl.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":48,
+     "fields":{
+        "store":3,
+        "category":2,
+        "name":"Brita 1 Ensacada 20kg",
+        "about":"Ideal para concreto estrutural.",
+        "quantity":90,
+        "price":"14.00",
+        "image":"leroy-merlin/materiais-básicos/Brita_1_Ensacada_20kg-pedra_britada_1_saco_20kg_rl_areia__L7yyQ8R.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":49,
+     "fields":{
+        "store":3,
+        "category":2,
+        "name":"Bloco de Concreto 39x14x19cm",
+        "about":"Alta resistência para alvenarias estruturais.",
+        "quantity":400,
+        "price":"3.40",
+        "image":"leroy-merlin/materiais-básicos/Bloco_de_Concreto_39x14x19cm-bloco_de_concreto_vedacao_14_4Akjhtj.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":50,
+     "fields":{
+        "store":3,
+        "category":2,
+        "name":"Vergalhão CA-50 8mm 12m",
+        "about":"Aço ideal para vigas e colunas.",
+        "quantity":70,
+        "price":"82.90",
+        "image":"leroy-merlin/materiais-básicos/Vergalhão_CA-50_8mm_12m-vergalhao-CA.png"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":51,
+     "fields":{
+        "store":3,
+        "category":3,
+        "name":"Tinta Acrílica Fosca 18L Branco Neve",
+        "about":"Acabamento fosco com cobertura uniforme.",
+        "quantity":30,
+        "price":"151.00",
+        "image":"leroy-merlin/tintas-e-acessórios/Tinta_Acrílica_Fosca_18L_Branco_Neve-61NNEAkaMpL._AC_SL1181_.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":52,
+     "fields":{
+        "store":3,
+        "category":3,
+        "name":"Rolo de Pintura Antigota 23cm",
+        "about":"Distribui tinta de maneira homogênea.",
+        "quantity":90,
+        "price":"17.00",
+        "image":"leroy-merlin/tintas-e-acessórios/Rolo_de_Pintura_Antigota_23cm-61mcj5E2kQL._AC_SL1000_.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":53,
+     "fields":{
+        "store":3,
+        "category":3,
+        "name":"Pincel Trincha 2''",
+        "about":"Precisão em cantos e recortes.",
+        "quantity":110,
+        "price":"9.50",
+        "image":"leroy-merlin/tintas-e-acessórios/Pincel_Trincha_2-1010037_1_1557425396.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":54,
+     "fields":{
+        "store":3,
+        "category":3,
+        "name":"Fita Crepe 24mm x 50m",
+        "about":"Ideal para mascaramento durante pinturas.",
+        "quantity":80,
+        "price":"7.80",
+        "image":"leroy-merlin/tintas-e-acessórios/Fita_Crepe_24mm_x_50m-51AMRGJ5uL._AC_SY300_SX300_.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":55,
+     "fields":{
+        "store":3,
+        "category":3,
+        "name":"Bandeja para Tinta 23cm",
+        "about":"Utilizada com rolos de pintura padrão.",
+        "quantity":130,
+        "price":"6.20",
+        "image":"leroy-merlin/tintas-e-acessórios/Bandeja_para_Tinta_23cm-770735_2_1674674557.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":56,
+     "fields":{
+        "store":3,
+        "category":4,
+        "name":"Porta de Madeira Lisa 210x70cm",
+        "about":"Simples e versátil para interiores.",
+        "quantity":35,
+        "price":"188.00",
+        "image":"leroy-merlin/portas-e-janelas/Porta_de_Madeira_Lisa_210x70cm-folha_de_porta_madeira_deco_u0azV6g.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":57,
+     "fields":{
+        "store":3,
+        "category":4,
+        "name":"Porta Sanfonada PVC Branca",
+        "about":"Solução prática para espaços reduzidos.",
+        "quantity":45,
+        "price":"97.00",
+        "image":"leroy-merlin/portas-e-janelas/Porta_Sanfonada_PVC_Branca-porta-sanfonada-pvc-210x85cm-ci_BxFoxTz.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":58,
+     "fields":{
+        "store":3,
+        "category":4,
+        "name":"Janela de Alumínio 100x100cm",
+        "about":"Design moderno e funcional.",
+        "quantity":28,
+        "price":"258.00",
+        "image":"leroy-merlin/portas-e-janelas/Janela_de_Alumínio_100x100cm-janela-aluminio.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":59,
+     "fields":{
+        "store":3,
+        "category":4,
+        "name":"Veneziana de Alumínio 4 Folhas",
+        "about":"Boa ventilação com privacidade.",
+        "quantity":25,
+        "price":"330.00",
+        "image":"leroy-merlin/portas-e-janelas/Veneziana_de_Alumínio_4_Folhas-janela_de_aluminio_venezian_3ryf5Q7.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":60,
+     "fields":{
+        "store":3,
+        "category":4,
+        "name":"Guarnição de Madeira 5cm",
+        "about":"Toque final elegante para portas.",
+        "quantity":85,
+        "price":"22.00",
+        "image":"leroy-merlin/portas-e-janelas/Guarnição_de_Madeira_5cm-guarnicao-porta.png"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":61,
+     "fields":{
+        "store":4,
+        "category":1,
+        "name":"Piso Cerâmico 45x45cm Branco",
+        "about":"Revestimento durável para interiores residenciais.",
+        "quantity":85,
+        "price":"27.90",
+        "image":"leroy-merlin/pisos-e-revestimentos/Piso_Cerâmico_45x45cm_Branco-piso_ceramico_cimenticio_OGxHqAB.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":62,
+     "fields":{
+        "store":4,
+        "category":1,
+        "name":"Revestimento Acetinado 32x57cm",
+        "about":"Perfeito para ambientes úmidos, com acabamento acetinado.",
+        "quantity":60,
+        "price":"32.50",
+        "image":"leroy-merlin/pisos-e-revestimentos/Revestimento_Acetinado_32x57cm-revestimento-acetinado.png"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":63,
+     "fields":{
+        "store":4,
+        "category":1,
+        "name":"Piso Porcelanato Polido 60x60cm",
+        "about":"Ideal para salas e ambientes sofisticados.",
+        "quantity":55,
+        "price":"51.90",
+        "image":"leroy-merlin/pisos-e-revestimentos/Piso_Porcelanato_Polido_60x60cm-porcelanato_acetinado_PYRyOl4.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":64,
+     "fields":{
+        "store":4,
+        "category":1,
+        "name":"Pastilha de Vidro Decorativa",
+        "about":"Excelente para dar destaque em detalhes decorativos.",
+        "quantity":90,
+        "price":"18.40",
+        "image":"leroy-merlin/pisos-e-revestimentos/Pastilha_de_Vidro_Decorativa-pastilha-vidro-decorativa.png"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":65,
+     "fields":{
+        "store":4,
+        "category":1,
+        "name":"Rodapé em PVC Branco 10cm",
+        "about":"Rodapé leve e resistente, ideal para áreas molhadas.",
+        "quantity":150,
+        "price":"13.90",
+        "image":"leroy-merlin/pisos-e-revestimentos/Rodapé_em_PVC_Branco_10cm-rodape_de_pvc_branco_neve_1_BKaYD57.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":66,
+     "fields":{
+        "store":4,
+        "category":2,
+        "name":"Cimento CP-II 50kg",
+        "about":"Cimento com ótimo custo-benefício para obras gerais.",
+        "quantity":140,
+        "price":"38.50",
+        "image":"leroy-merlin/materiais-básicos/Cimento_CP-II_50kg-cimento_cp_ii_f_32_todas_as_obras_50kg_aacRKeM.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":67,
+     "fields":{
+        "store":4,
+        "category":2,
+        "name":"Areia Média Lavada 20kg",
+        "about":"Ideal para rebocos finos e assentamento de blocos.",
+        "quantity":110,
+        "price":"12.40",
+        "image":"leroy-merlin/materiais-básicos/Areia_Média_Lavada_20kg-areia_media_lavada_saco_20kg_grup_jF8xMVl.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":68,
+     "fields":{
+        "store":4,
+        "category":2,
+        "name":"Brita 1 Ensacada 20kg",
+        "about":"Brita ensacada prática para pequenas obras.",
+        "quantity":95,
+        "price":"12.90",
+        "image":"leroy-merlin/materiais-básicos/Brita_1_Ensacada_20kg-pedra_britada_1_saco_20kg_rl_areia__L7yyQ8R.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":69,
+     "fields":{
+        "store":4,
+        "category":2,
+        "name":"Bloco de Concreto 39x14x19cm",
+        "about":"Bloco resistente e com bom desempenho acústico.",
+        "quantity":480,
+        "price":"3.10",
+        "image":"leroy-merlin/materiais-básicos/Bloco_de_Concreto_39x14x19cm-bloco_de_concreto_vedacao_14_4Akjhtj.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":70,
+     "fields":{
+        "store":4,
+        "category":2,
+        "name":"Vergalhão CA-50 8mm 12m",
+        "about":"Vergalhão com alta aderência para estruturas reforçadas.",
+        "quantity":75,
+        "price":"77.90",
+        "image":"leroy-merlin/materiais-básicos/Vergalhão_CA-50_8mm_12m-vergalhao-CA.png"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":71,
+     "fields":{
+        "store":4,
+        "category":3,
+        "name":"Tinta Acrílica Fosca 18L Branco Neve",
+        "about":"Tinta branca fosca com excelente cobertura.",
+        "quantity":45,
+        "price":"139.90",
+        "image":"leroy-merlin/tintas-e-acessórios/Tinta_Acrílica_Fosca_18L_Branco_Neve-61NNEAkaMpL._AC_SL1181_.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":72,
+     "fields":{
+        "store":4,
+        "category":3,
+        "name":"Rolo de Pintura Antigota 23cm",
+        "about":"Rolo de alta durabilidade para pintura precisa.",
+        "quantity":110,
+        "price":"15.50",
+        "image":"leroy-merlin/tintas-e-acessórios/Rolo_de_Pintura_Antigota_23cm-61mcj5E2kQL._AC_SL1000_.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":73,
+     "fields":{
+        "store":4,
+        "category":3,
+        "name":"Pincel Trincha 2''",
+        "about":"Pincel ideal para recortes e acabamentos.",
+        "quantity":130,
+        "price":"8.90",
+        "image":"leroy-merlin/tintas-e-acessórios/Pincel_Trincha_2-1010037_1_1557425396.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":74,
+     "fields":{
+        "store":4,
+        "category":3,
+        "name":"Fita Crepe 24mm x 50m",
+        "about":"Fita para proteger áreas durante a pintura.",
+        "quantity":95,
+        "price":"6.50",
+        "image":"leroy-merlin/tintas-e-acessórios/Fita_Crepe_24mm_x_50m-51AMRGJ5uL._AC_SY300_SX300_.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":75,
+     "fields":{
+        "store":4,
+        "category":3,
+        "name":"Bandeja para Tinta 23cm",
+        "about":"Bandeja prática e fácil de limpar, ideal para rolos.",
+        "quantity":160,
+        "price":"5.50",
+        "image":"leroy-merlin/tintas-e-acessórios/Bandeja_para_Tinta_23cm-770735_2_1674674557.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":76,
+     "fields":{
+        "store":4,
+        "category":4,
+        "name":"Porta de Madeira Lisa 210x70cm",
+        "about":"Porta de madeira lisa, ideal para ambientes internos.",
+        "quantity":38,
+        "price":"179.90",
+        "image":"leroy-merlin/portas-e-janelas/Porta_de_Madeira_Lisa_210x70cm-folha_de_porta_madeira_deco_u0azV6g.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":77,
+     "fields":{
+        "store":4,
+        "category":4,
+        "name":"Porta Sanfonada PVC Branca",
+        "about":"Porta de PVC, ideal para banheiros e lavanderias.",
+        "quantity":48,
+        "price":"89.90",
+        "image":"leroy-merlin/portas-e-janelas/Porta_Sanfonada_PVC_Branca-porta-sanfonada-pvc-210x85cm-ci_BxFoxTz.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":78,
+     "fields":{
+        "store":4,
+        "category":4,
+        "name":"Janela de Alumínio 100x100cm",
+        "about":"Janela de alumínio com vidro temperado e veneziana.",
+        "quantity":33,
+        "price":"249.90",
+        "image":"leroy-merlin/portas-e-janelas/Janela_de_Alumínio_100x100cm-janela-aluminio.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":79,
+     "fields":{
+        "store":4,
+        "category":4,
+        "name":"Veneziana de Alumínio 4 Folhas",
+        "about":"Veneziana de alumínio, ideal para áreas de ventilação.",
+        "quantity":28,
+        "price":"309.90",
+        "image":"leroy-merlin/portas-e-janelas/Veneziana_de_Alumínio_4_Folhas-janela_de_aluminio_venezian_3ryf5Q7.jpg"
+     }
+  },
+  {
+     "model":"stores.product",
+     "pk":80,
+     "fields":{
+        "store":4,
+        "category":4,
+        "name":"Guarnição de Madeira 5cm",
+        "about":"Guarnição de madeira para acabamento de portas.",
+        "quantity":98,
+        "price":"19.90",
+        "image":"leroy-merlin/portas-e-janelas/Guarnição_de_Madeira_5cm-guarnicao-porta.png"
+     }
+  },
+  {
+    "model": "stores.product",
+    "pk": 81,
+    "fields": {
+      "store": 5,
+      "category": 1,
+      "name": "Piso Cerâmico 45x45cm Branco",
+      "about": "Piso cerâmico ideal para áreas internas, acabamento fosco.",
+      "quantity": 90,
+      "price": "34.90",
+      "image": "leroy-merlin/pisos-e-revestimentos/Piso_Cerâmico_45x45cm_Branco-piso_ceramico_cimenticio_OGxHqAB.jpg"
+    }
+  },
+  {
+    "model": "stores.product",
+    "pk": 82,
+    "fields": {
+      "store": 5,
+      "category": 1,
+      "name": "Revestimento Acetinado 32x57cm",
+      "about": "Revestimento acetinado ideal para banheiros e cozinhas.",
+      "quantity": 80,
+      "price": "39.90",
+      "image": "leroy-merlin/pisos-e-revestimentos/Revestimento_Acetinado_32x57cm-revestimento-acetinado.png"
+    }
+  },
+  {
+    "model": "stores.product",
+    "pk": 83,
+    "fields": {
+      "store": 5,
+      "category": 1,
+      "name": "Piso Porcelanato Polido 60x60cm",
+      "about": "Piso de porcelanato polido para ambientes de alto tráfego.",
+      "quantity": 70,
+      "price": "54.90",
+      "image": "leroy-merlin/pisos-e-revestimentos/Piso_Porcelanato_Polido_60x60cm-porcelanato_acetinado_PYRyOl4.jpg"
+    }
+  },
+  {
+    "model": "stores.product",
+    "pk": 84,
+    "fields": {
+      "store": 5,
+      "category": 1,
+      "name": "Pastilha de Vidro Decorativa",
+      "about": "Pastilha de vidro, ideal para criar faixas decorativas.",
+      "quantity": 110,
+      "price": "22.90",
+      "image": "leroy-merlin/pisos-e-revestimentos/Pastilha_de_Vidro_Decorativa-pastilha-vidro-decorativa.png"
+    }
+  },
+  {
+    "model": "stores.product",
+    "pk": 85,
+    "fields": {
+      "store": 5,
+      "category": 1,
+      "name": "Rodapé em PVC Branco 10cm",
+      "about": "Rodapé branco em PVC, resistente à umidade e fácil instalação.",
+      "quantity": 200,
+      "price": "16.50",
+      "image": "leroy-merlin/pisos-e-revestimentos/Rodapé_em_PVC_Branco_10cm-rodape_de_pvc_branco_neve_1_BKaYD57.jpg"
+    }
+  },
+  {
+    "model": "stores.product",
+    "pk": 86,
+    "fields": {
+      "store": 5,
+      "category": 2,
+      "name": "Cimento CP-II 50kg",
+      "about": "Cimento com alta resistência para obras em geral.",
+      "quantity": 160,
+      "price": "42.90",
+      "image": "leroy-merlin/materiais-básicos/Cimento_CP-II_50kg-cimento_cp_ii_f_32_todas_as_obras_50kg_aacRKeM.jpg"
+    }
+  },
+  {
+    "model": "stores.product",
+    "pk": 87,
+    "fields": {
+      "store": 5,
+      "category": 2,
+      "name": "Areia Média Lavada 20kg",
+      "about": "Areia lavada para assentamento e reboco.",
+      "quantity": 120,
+      "price": "13.90",
+      "image": "leroy-merlin/materiais-básicos/Areia_Média_Lavada_20kg-areia_media_lavada_saco_20kg_grup_jF8xMVl.jpg"
+    }
+  },
+  {
+    "model": "stores.product",
+    "pk": 88,
+    "fields": {
+      "store": 5,
+      "category": 2,
+      "name": "Brita 1 Ensacada 20kg",
+      "about": "Brita ideal para concreto e drenagem.",
+      "quantity": 90,
+      "price": "15.50",
+      "image": "leroy-merlin/materiais-básicos/Brita_1_Ensacada_20kg-pedra_britada_1_saco_20kg_rl_areia__L7yyQ8R.jpg"
+    }
+  },
+  {
+    "model": "stores.product",
+    "pk": 89,
+    "fields": {
+      "store": 5,
+      "category": 2,
+      "name": "Bloco de Concreto 39x14x19cm",
+      "about": "Bloco de concreto para construção de alvenarias.",
+      "quantity": 500,
+      "price": "3.80",
+      "image": "leroy-merlin/materiais-básicos/Bloco_de_Concreto_39x14x19cm-bloco_de_concreto_vedacao_14_4Akjhtj.jpg"
+    }
+  },
+  {
+    "model": "stores.product",
+    "pk": 90,
+    "fields": {
+      "store": 5,
+      "category": 2,
+      "name": "Vergalhão CA-50 8mm 12m",
+      "about": "Vergalhão para uso em concreto armado.",
+      "quantity": 75,
+      "price": "89.90",
+      "image": "leroy-merlin/materiais-básicos/Vergalhão_CA-50_8mm_12m-vergalhao-CA.png"
+    }
+  },
+  {
+    "model": "stores.product",
+    "pk": 91,
+    "fields": {
+      "store": 5,
+      "category": 3,
+      "name": "Tinta Acrílica Fosca 18L Branco Neve",
+      "about": "Tinta de acabamento fosco para superfícies internas.",
+      "quantity": 50,
+      "price": "159.90",
+      "image": "leroy-merlin/tintas-e-acessórios/Tinta_Acrílica_Fosca_18L_Branco_Neve-61NNEAkaMpL._AC_SL1181_.jpg"
+    }
+  },
+  {
+    "model": "stores.product",
+    "pk": 92,
+    "fields": {
+      "store": 5,
+      "category": 3,
+      "name": "Rolo de Pintura Antigota 23cm",
+      "about": "Rolo com ótima cobertura para pintura sem marcas.",
+      "quantity": 120,
+      "price": "18.50",
+      "image": "leroy-merlin/tintas-e-acessórios/Rolo_de_Pintura_Antigota_23cm-61mcj5E2kQL._AC_SL1000_.jpg"
+    }
+  },
+  {
+    "model": "stores.product",
+    "pk": 93,
+    "fields": {
+      "store": 5,
+      "category": 3,
+      "name": "Pincel Trincha 2''",
+      "about": "Pincel ideal para acabamento em áreas pequenas.",
+      "quantity": 130,
+      "price": "11.50",
+      "image": "leroy-merlin/tintas-e-acessórios/Pincel_Trincha_2-1010037_1_1557425396.jpg"
+    }
+  },
+  {
+    "model": "stores.product",
+    "pk": 94,
+    "fields": {
+      "store": 5,
+      "category": 3,
+      "name": "Fita Crepe 24mm x 50m",
+      "about": "Fita crepe de excelente aderência, ideal para pintura.",
+      "quantity": 110,
+      "price": "8.90",
+      "image": "leroy-merlin/tintas-e-acessórios/Fita_Crepe_24mm_x_50m-51AMRGJ5uL._AC_SY300_SX300_.jpg"
+    }
+  },
+  {
+    "model": "stores.product",
+    "pk": 95,
+    "fields": {
+      "store": 5,
+      "category": 3,
+      "name": "Bandeja para Tinta 23cm",
+      "about": "Bandeja plástica de alta qualidade para rolos e pincéis.",
+      "quantity": 160,
+      "price": "7.50",
+      "image": "leroy-merlin/tintas-e-acessórios/Bandeja_para_Tinta_23cm-770735_2_1674674557.jpg"
+    }
+  },
+  {
+    "model": "stores.product",
+    "pk": 96,
+    "fields": {
+      "store": 5,
+      "category": 4,
+      "name": "Porta de Madeira Lisa 210x70cm",
+      "about": "Porta interna de madeira lisa com ótimo acabamento.",
+      "quantity": 40,
+      "price": "209.90",
+      "image": "leroy-merlin/portas-e-janelas/Porta_de_Madeira_Lisa_210x70cm-folha_de_porta_madeira_deco_u0azV6g.jpg"
+    }
+  },
+  {
+    "model": "stores.product",
+    "pk": 97,
+    "fields": {
+      "store": 5,
+      "category": 4,
+      "name": "Porta Sanfonada PVC Branca",
+      "about": "Porta sanfonada em PVC resistente e prática.",
+      "quantity": 50,
+      "price": "119.90",
+      "image": "leroy-merlin/portas-e-janelas/Porta_Sanfonada_PVC_Branca-porta-sanfonada-pvc-210x85cm-ci_BxFoxTz.jpg"
+    }
+  },
+  {
+    "model": "stores.product",
+    "pk": 98,
+    "fields": {
+      "store": 5,
+      "category": 4,
+      "name": "Janela de Alumínio 100x100cm",
+      "about": "Janela de alumínio com vidro temperado e veneziana.",
+      "quantity": 36,
+      "price": "279.90",
+      "image": "leroy-merlin/portas-e-janelas/Janela_de_Alumínio_100x100cm-janela-aluminio.jpg"
+    }
+  },
+  {
+    "model": "stores.product",
+    "pk": 99,
+    "fields": {
+      "store": 5,
+      "category": 4,
+      "name": "Veneziana de Alumínio 4 Folhas",
+      "about": "Veneziana de alumínio, ideal para controlar a luz e ventilação.",
+      "quantity": 35,
+      "price": "359.90",
+      "image": "leroy-merlin/portas-e-janelas/Veneziana_de_Alumínio_4_Folhas-janela_de_aluminio_venezian_3ryf5Q7.jpg"
+    }
+  },
+  {
+    "model": "stores.product",
+    "pk": 100,
+    "fields": {
+      "store": 5,
+      "category": 4,
+      "name": "Guarnição de Madeira 5cm",
+      "about": "Guarnição elegante de madeira para acabamento de portas.",
+      "quantity": 110,
+      "price": "28.90",
+      "image": "leroy-merlin/portas-e-janelas/Guarnição_de_Madeira_5cm-guarnicao-porta.png"
+    }
+  }
+]
