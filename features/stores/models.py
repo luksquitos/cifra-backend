@@ -75,11 +75,12 @@ class Product(models.Model):
     store = models.ForeignKey(
         "stores.Store", models.CASCADE, related_name="products", verbose_name="Loja"
     )
-    name = models.CharField("Nome", max_length=200)
-    about = models.TextField("Sobre", help_text="Sobre o produto")
     category = models.ForeignKey(
         "stores.Category", models.CASCADE, verbose_name="Categoria"
     )
+    name = models.CharField("Nome", max_length=200)
+    about = models.TextField("Sobre", help_text="Sobre o produto")
+    quantity = models.PositiveIntegerField("Quantidade disponível")
     price = models.DecimalField(
         verbose_name="Preço",
         max_digits=6,
