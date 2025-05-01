@@ -13,3 +13,8 @@ Senha: admin
 - Criar uma .venv com `python3 -m venv .nome-venv`
 - Ativar a venv com `source .venv/bin/activate`
 - Instalar o pre-commit com `pre-commit install`
+
+## Carregar as fixtures.
+Esse comando foi removido do entrypoint, porque o arquivo de histórico de preço é muito grande e estava demorando para carregar todos os dados.
+
+``` docker compose exec api python manage.py loaddata stores categories products price_histories```
