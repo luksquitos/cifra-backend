@@ -6,7 +6,7 @@ from . import models
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Category
-        fields = "__all__"
+        exclude = ["svg"]
 
 
 class ProductSerializer(serializers.ModelSerializer):
@@ -15,6 +15,7 @@ class ProductSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Product
         fields = "__all__"
+        depth = 1
 
 
 class CategorySvgSerializer(serializers.ModelSerializer):
@@ -22,9 +23,11 @@ class CategorySvgSerializer(serializers.ModelSerializer):
 
     def get_svg(self, obj: models.Category):
         query_params = self.context.get("request").query_params
-        query_params = self._format_query_params(query_params)
 
-        obj.update_svg_attributes(**query_params)
+        if query_params:
+            query_params = self._format_query_params(query_params)
+
+            obj.update_svg_attributes(**query_params)
 
         return obj.svg
 

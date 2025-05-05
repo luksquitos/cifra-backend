@@ -1,9 +1,11 @@
 from django.db import models
-from rest_framework.filters import BaseFilterBackend
+from drf_spectacular.plumbing import build_basic_type, build_parameter_type
 from drf_spectacular.types import OpenApiTypes
 from drf_spectacular.utils import OpenApiParameter
-from drf_spectacular.plumbing import build_basic_type, build_parameter_type
+from rest_framework.filters import BaseFilterBackend
+
 from .utils import get_field_parts
+
 
 class ParameterizedFilterBackend(BaseFilterBackend):
     def get_params(self, view, request):
@@ -92,14 +94,14 @@ class ParameterizedFilterBackend(BaseFilterBackend):
             field = query_names[param]
             if not field:
                 continue
-            
+
             field_parts, lookup = get_field_parts(model, field)
             if not field_parts:
                 continue
 
             last_field = field_parts[-1]
             lookup_name = lookup.lookup_name if lookup is not None else ""
-            
+
             if not last_field.__class__ in unambiguous_mapping:
                 continue
 
@@ -109,7 +111,7 @@ class ParameterizedFilterBackend(BaseFilterBackend):
                 description += part.verbose_name
                 if i + 1 < len(field_parts):
                     description += " no objeto relacionado: "
-            
+
             if lookup_name:
                 description += f" (com o lookup: {lookup_name})"
 
@@ -118,8 +120,6 @@ class ParameterizedFilterBackend(BaseFilterBackend):
             enum = None
             if last_field.choices and not lookup:
                 enum = [value for value, _ in last_field.choices]
-
-            print(enum)
 
             params += [
                 build_parameter_type(
@@ -133,5 +133,6 @@ class ParameterizedFilterBackend(BaseFilterBackend):
             ]
 
         return params
+
 
 __all__ = ["ParameterizedFilterBackend"]

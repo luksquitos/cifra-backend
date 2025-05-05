@@ -1,4 +1,5 @@
 from pathlib import Path
+
 import environ
 
 env = environ.Env(
@@ -38,7 +39,7 @@ INSTALLED_APPS = [
     # Core Configurations
     "core.api",
     "core.swagger",
-    'image_uploader_widget',
+    "image_uploader_widget",
     # Feature Apps
     "features.authentication",
     "features.user",
@@ -147,7 +148,7 @@ REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
         "rest_framework_simplejwt.authentication.JWTAuthentication",
     ),
-    "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.IsAuthenticated",),
+    # "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.IsAuthenticated",),
     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.LimitOffsetPagination",
     "PAGE_SIZE": 20,
