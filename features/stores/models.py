@@ -118,7 +118,7 @@ class PriceProductHistory(models.Model):
     class Meta:
         verbose_name = "Histórico de preço de produto"
         verbose_name_plural = "Históricos de preço de produto"
-        ordering = ["price"]
+        ordering = ["-created_at"]
 
 
 @receiver(models.signals.post_save, sender=Product)
