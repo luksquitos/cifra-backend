@@ -13,7 +13,6 @@ from features.stores import models, serializers
 class ProductViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = serializers.ProductSerializer
     queryset = models.Product.objects.select_related("category").all()
-    permission_classes = []
     filter_backends = [ParameterizedFilterBackend, SearchFilter]
     filter_params_query = {
         "category": "category",
@@ -32,18 +31,18 @@ class ProductViewSet(viewsets.ReadOnlyModelViewSet):
 
         return Response(serializer.data, status=status.HTTP_200_OK)
 
-    @action(detail=True, methods=["get"])
-    def historic(self, request, pk):
-        # Filters ?
-        # Create a new ViewSet with NestedSimpleRouter instead.
-        instance = self.get_object()
-        queryset = models.PriceProductHistory.objects.select_related("product").filter(
-            product=instance
+
+class ProductHistoricViewSet(viewsets.ReadOnlyModelViewSet):
+    serializer_class = serializers.PriceHistorySerializer
+    filter_backends = (ParameterizedFilterBackend,)
+    filter_params_query = {"start_at": "created_at__gte", "end_at": "created_at__lte"}
+
+    def get_queryset(self):
+        pk = self.kwargs.get("product_pk")
+
+        return models.PriceProductHistory.objects.select_related("product").filter(
+            product__pk=pk
         )
-
-        serializer = serializers.PriceHistorySerializer(queryset, many=True)
-
-        return Response(serializer.data, status=status.HTTP_200_OK)
 
 
 @extend_schema_view(
@@ -67,16 +66,6 @@ class ProductViewSet(viewsets.ReadOnlyModelViewSet):
     )
 )
 class CategoryViewSet(viewsets.ReadOnlyModelViewSet):
-    serializer_class = serializers.CategorySerializer
+    serializer_class = serializers.CategorySvgSerializer
     queryset = models.Category.objects.all()
-    permission_classes = []
     pagination_class = None
-
-    def get_serializer_class(self):
-        # FIXME Deve ser usado apenas no desenvolvimento para "ajuste rápido"
-
-        query_params = self.request.query_params
-        if query_params:
-            return serializers.CategorySvgSerializer
-
-        return super().get_serializer_class()
