@@ -1,6 +1,8 @@
 from django.contrib import admin
+from django.db.models import ImageField
+from image_uploader_widget.widgets import ImageUploaderWidget
 
-from features.stores import models
+from features.stores import forms, models
 
 
 @admin.register(models.Store)
@@ -29,37 +31,16 @@ class ProductAdmin(admin.ModelAdmin):
     list_filter = ("store", "category")
     ordering = ("name",)
     list_per_page = 20
-
-    def store_name(self, obj):
-        return obj.store.name
-
-    store_name.admin_order_field = "store"
-    store_name.short_description = "Nome da Loja"
-
-    def category_name(self, obj):
-        return obj.category.name
-
-    category_name.admin_order_field = "category"
-    category_name.short_description = "Categoria"
+    formfield_overrides = {
+        ImageField: {"widget": ImageUploaderWidget},
+    }
 
 
 @admin.register(models.PriceProductHistory)
-class PriceProductHistoryAdmin(admin.ModelAdmin):
+class PriceProductHistoryAdmin(admin.ModelAdmin):  #
     list_display = ("id", "product", "price", "created_at")
     list_display_links = ("id", "product", "price", "created_at")
     search_fields = ("product__name", "price")
     list_filter = ("created_at", "product__store")
     ordering = ("-created_at",)
     list_per_page = 20
-
-    def product_name(self, obj):
-        return obj.product.name
-
-    product_name.admin_order_field = "product"
-    product_name.short_description = "Produto"
-
-    def store_name(self, obj):
-        return obj.product.store.name
-
-    store_name.admin_order_field = "product__store"
-    store_name.short_description = "Loja do Produto"
