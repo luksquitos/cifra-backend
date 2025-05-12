@@ -2,7 +2,12 @@ from django.contrib import admin
 from django.db.models import ImageField
 from image_uploader_widget.widgets import ImageUploaderWidget
 
-from features.stores import forms, models
+from features.stores import models
+
+
+class SpecificCharacteristicInline(admin.StackedInline):
+    model = models.ProductTechnicalCharacteristics
+    extra = 1
 
 
 @admin.register(models.Store)
@@ -12,6 +17,16 @@ class StoreAdmin(admin.ModelAdmin):
     search_fields = ("name",)
     list_filter = ("name",)
     ordering = ("name",)
+
+
+@admin.register(models.ProductTechnicalCharacteristics)
+class ProductTechnicalCharacteristicsAdmin(admin.ModelAdmin):
+    pass
+    # list_display = ("id", "name")
+    # list_display_links = ("id", "name")
+    # search_fields = ("name",)
+    # list_filter = ("name",)
+    # ordering = ("name",)
 
 
 @admin.register(models.Category)
@@ -31,6 +46,7 @@ class ProductAdmin(admin.ModelAdmin):
     list_filter = ("store", "category")
     ordering = ("name",)
     list_per_page = 20
+    inlines = [SpecificCharacteristicInline]
     formfield_overrides = {
         ImageField: {"widget": ImageUploaderWidget},
     }
