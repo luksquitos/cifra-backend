@@ -17,4 +17,4 @@ Senha: admin
 ## Carregar as fixtures.
 Esse comando foi removido do entrypoint, porque o arquivo de histórico de preço é muito grande e estava demorando para carregar todos os dados.
 
-``` docker compose exec api python manage.py loaddata stores categories products price_histories```
+``` docker compose exec api python manage.py loaddata stores categories products historic```
