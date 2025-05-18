@@ -43,6 +43,14 @@ class ProductHistoricViewSet(viewsets.ReadOnlyModelViewSet):
         return models.PriceProductHistory.objects.select_related("product").filter(
             product__pk=pk
         )
+        
+    @action(methods=["get"], detail=False)
+    def last(self, request, product_pk):
+        """Retorna o preço atual do produto"""
+        current_price = self.get_queryset().first()
+        serializer = self.get_serializer(instance=current_price)
+        
+        return Response(serializer.data, 200)
 
 
 @extend_schema_view(
