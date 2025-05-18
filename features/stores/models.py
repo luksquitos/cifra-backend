@@ -100,6 +100,18 @@ class Product(models.Model):
         ordering = ["price"]
 
 
+class ProductTechnicalCharacteristics(models.Model):
+    product = models.ForeignKey(
+        "stores.Product", models.CASCADE, related_name="characteristics"
+    )
+    key = models.CharField("Nome da Característica")
+    value = models.CharField("Característica")
+
+    class Meta:
+        verbose_name = "Caracteristica Técnica do Produto"
+        verbose_name_plural = "Caracteristicas Técnicas do Produto"
+
+
 class PriceProductHistory(models.Model):
     product = models.ForeignKey(
         "stores.Product",
