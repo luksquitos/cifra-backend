@@ -18,7 +18,10 @@ class User(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField("E-mail", unique=True, blank=True)
     name = models.CharField("Nome", max_length=160)
     type_user = models.CharField(
-        "Tipo de Usuário", max_length=8, default=TypeUser.CLIENT
+        "Tipo de Usuário",
+        max_length=8,
+        choices=TypeUser.choices,
+        default=TypeUser.CLIENT,
     )
     is_staff = models.BooleanField(
         "Membro da Equipe?",
