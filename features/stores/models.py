@@ -5,9 +5,27 @@ from django.core.validators import MinValueValidator
 from django.db import models
 from django.dispatch import receiver
 
+from core.faker import fake
+from core.validators import validate_cnpj
+from features.user.validators import validate_logistic
+
 
 class Store(models.Model):
+    user = models.OneToOneField(
+        "user.User",
+        models.CASCADE,
+        related_name="store",
+        verbose_name="Lojista",
+        validators=[validate_logistic],
+        # TODO Remove after fixtures for all.
+        null=True,
+        blank=True,
+    )
     name = models.CharField("Nome", max_length=200)
+    address = models.CharField("Endereço", max_length=256, default=fake.address())
+    cnpj = models.CharField(
+        "CNPJ", max_length=18, validators=[validate_cnpj], default=fake.cnpj()
+    )
 
     def __str__(self):
         return self.name
