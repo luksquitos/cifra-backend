@@ -48,3 +48,9 @@ class PriceHistorySerializer(serializers.ModelSerializer):
     class Meta:
         model = models.PriceProductHistory
         exclude = ["id", "product"]
+
+
+class PriceCharacteristicsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.ProductTechnicalCharacteristics
+        exclude = ["id", "product"]

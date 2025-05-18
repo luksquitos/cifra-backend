@@ -13,4 +13,13 @@ historic_router.register(
     "historic", viewsets.ProductHistoricViewSet, "ProductHistoricPrice"
 )
 
-urlpatterns = [path("", include(historic_router.urls)), path("", include(router.urls))]
+characteristics_router = NestedSimpleRouter(router, "products", lookup="product")
+characteristics_router.register(
+    "characteristics", viewsets.ProductCharacteristicsViewSet, "ProductCharacteristics"
+)
+
+urlpatterns = [
+    path("", include(characteristics_router.urls)),
+    path("", include(historic_router.urls)),
+    path("", include(router.urls)),
+]
