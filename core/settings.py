@@ -171,5 +171,21 @@ SPECTACULAR_SETTINGS = {
             "name": "users",
             "description": "Reúne endpoints para lidar com os usuários da plataforma.",
         },
+        {
+            "name": "products",
+            "description": "Reúne endpoints para lidar com os produtos da plataforma.",
+        },
+        {
+            "name": "historic",
+            "description": "Reúne endpoints para lidar com os históricos de preços dos produtos da plataforma.",
+        },
+        {
+            "name": "characteristics",
+            "description": "Reúne endpoints para lidar com as características dos produtos da plataforma.",
+        },
+        {
+            "name": "stores",
+            "description": "Reúne endpoints para lidar com as lojas da plataforma.",
+        },
     ],
 }

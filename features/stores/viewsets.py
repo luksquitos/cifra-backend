@@ -9,6 +9,7 @@ from core.filters import ParameterizedFilterBackend, SearchFilter
 from features.stores import models, serializers
 
 
+@extend_schema(tags=["products"])
 class ProductViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = serializers.ProductSerializer
     queryset = models.Product.objects.select_related("category").all()
@@ -31,6 +32,7 @@ class ProductViewSet(viewsets.ReadOnlyModelViewSet):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
 
+@extend_schema(tags=["historic"])
 class ProductHistoricViewSet(viewsets.ReadOnlyModelViewSet):
     """Endpoint que lida com os históricos de preços dos produtos"""
 
@@ -54,6 +56,7 @@ class ProductHistoricViewSet(viewsets.ReadOnlyModelViewSet):
         return Response(serializer.data, 200)
 
 
+@extend_schema(tags=["characteristics"])
 class ProductCharacteristicsViewSet(viewsets.ReadOnlyModelViewSet):
     """Endpoint que lida com as caraterísticas técnicas dos produtos"""
 
