@@ -13,16 +13,19 @@ class SpecificCharacteristicInline(admin.TabularInline):
 
 
 class ProductHistoryInline(admin.TabularInline):
+    # FIXME Logista não consegue apagar histórico de preço mesmo
+    # querendo apagar um Produto
     model = models.PriceProductHistory
     extra = 0
     classes = ("collapse",)
     readonly_fields = ("created_at", "price")
+    can_delete = False
 
     def has_add_permission(self, request, obj):
         return False
 
-    def has_delete_permission(self, request, obj=...):
-        return False
+    # def has_delete_permission(self, request, obj=...):
+    #     return False
 
     def has_change_permission(self, request, obj=...):
         return False
@@ -59,7 +62,6 @@ class CategoryAdmin(admin.ModelAdmin):
 @admin.register(models.Product, site=site)
 class ProductAdmin(admin.ModelAdmin):
     list_display = ("id", "store", "name", "category", "price", "image")
-    list_display_links = ("id", "store", "name", "category", "price", "image")
     search_fields = ("name",)
     list_filter = ("store", "category")
     ordering = ("name",)
@@ -69,6 +71,38 @@ class ProductAdmin(admin.ModelAdmin):
     formfield_overrides = {
         ImageField: {"widget": ImageUploaderWidget},
     }
+
+    def get_fields(self, request, obj=...):
+        fields = list(super().get_fields(request, obj))
+        if not request.user.is_superuser:
+            fields.remove("store")
+
+        return fields
+
+    def save_model(self, request, obj, form, change):
+        if not request.user.is_superuser:
+            obj.store = request.user.store
+        obj.save()
+
+    def get_list_display(self, request):
+        if request.user.is_superuser:
+            return self.list_display
+        return ("name", "category", "price", "image")
+
+    def get_list_filter(self, request):
+        if request.user.is_superuser:
+            return self.list_filter
+        return ("category",)
+
+    def get_list_display_links(self, request, list_display):
+        return self.list_display
+
+    def get_queryset(self, request):
+        if request.user.is_superuser:
+            return super().get_queryset(request)
+
+        store = models.Store.objects.get(user=request.user)
+        return models.Product.objects.select_related("store").filter(store=store)
 
 
 @admin.register(models.PriceProductHistory, site=site)
