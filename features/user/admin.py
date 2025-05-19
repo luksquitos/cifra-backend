@@ -3,23 +3,34 @@ from django.contrib.admin.options import IS_POPUP_VAR
 from django.contrib.admin.utils import unquote
 from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.forms import AdminPasswordChangeForm
-from django.utils.html import escape
 from django.core.exceptions import PermissionDenied
 from django.http import Http404, HttpResponseRedirect
-from django.urls import path, reverse
+from django.shortcuts import redirect
 from django.template.response import TemplateResponse
+from django.urls import path, reverse
 from django.utils.decorators import method_decorator
+from django.utils.html import escape
+from django.utils.translation import gettext
+from django.utils.translation import gettext_lazy as _
 from django.views.decorators.debug import sensitive_post_parameters
-from django.utils.translation import gettext, gettext_lazy as _
-from features.user import models, forms
+
+from core.admin import site
+from features.stores.models import Store
+from features.user import forms, models
 
 sensitive_post_parameters_m = method_decorator(sensitive_post_parameters())
 
 
-@admin.register(models.User)
+class StoreInline(admin.StackedInline):
+    model = Store
+    extra = 0
+
+
+@admin.register(models.User, site=site)
 class UserAdmin(admin.ModelAdmin):
     add_form_template = "admin/user/add_form.html"
     list_display = ["id", "name", "email"]
+    list_display_links = ["id", "name", "email"]
     search_fields = ["name", "email"]
     filter_horizontal = (
         "groups",
@@ -27,6 +38,11 @@ class UserAdmin(admin.ModelAdmin):
     )
     form = forms.UserChangeForm
     add_form = forms.UserCreationForm
+    inlines = [StoreInline]
+    logistic_fieldsets = (
+        ("Informações de Login", {"fields": ("email", "password")}),
+        ("Informações Pessoais", {"fields": ("name",)}),
+    )
     fieldsets = (
         ("Informações de Login", {"fields": ("email", "password")}),
         ("Informações Pessoais", {"fields": ("name",)}),
@@ -34,6 +50,7 @@ class UserAdmin(admin.ModelAdmin):
             "Administração",
             {
                 "fields": (
+                    "type_user",
                     "is_staff",
                     "is_superuser",
                     "groups",
@@ -55,12 +72,28 @@ class UserAdmin(admin.ModelAdmin):
     )
     change_password_form = AdminPasswordChangeForm
     change_user_password_template = None
-    
-    def get_fieldsets(self, request, obj = ...):
+
+    def get_fieldsets(self, request, obj=...):
         if not obj:
             return self.add_fieldsets
-        return self.fieldsets
-        
+        if request.user.is_superuser:
+            return self.fieldsets
+
+        return self.logistic_fieldsets
+
+    def changelist_view(self, request, extra_context=None):
+        # Skip list objects view to current instance.
+        if request.user.is_superuser:
+            return super().changelist_view(request, extra_context)
+
+        url = reverse(
+            "admin:%s_%s_change"
+            % (self.model._meta.app_label, self.model._meta.model_name),
+            args=(request.user.pk,),
+        )
+
+        return redirect(url)
+
     def get_form(self, request, obj=None, **kwargs):
         defaults = {}
         if obj is None:

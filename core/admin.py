@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.contrib.auth.models import Group
 
 
 class AdminSite(admin.AdminSite):
@@ -21,3 +22,8 @@ class AdminSite(admin.AdminSite):
 
 
 site = AdminSite("admin")
+
+
+@admin.register(Group, site=site)
+class GroupAdmin(admin.ModelAdmin):
+    filter_horizontal = ["permissions"]

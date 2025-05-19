@@ -2,6 +2,7 @@ from django.contrib import admin
 from django.db.models import ImageField
 from image_uploader_widget.widgets import ImageUploaderWidget
 
+from core.admin import site
 from features.stores import models
 
 
@@ -27,7 +28,7 @@ class ProductHistoryInline(admin.TabularInline):
         return False
 
 
-@admin.register(models.Store)
+@admin.register(models.Store, site=site)
 class StoreAdmin(admin.ModelAdmin):
     list_display = ("id", "name")
     list_display_links = ("id", "name")
@@ -36,7 +37,7 @@ class StoreAdmin(admin.ModelAdmin):
     ordering = ("name",)
 
 
-@admin.register(models.ProductTechnicalCharacteristics)
+@admin.register(models.ProductTechnicalCharacteristics, site=site)
 class ProductTechnicalCharacteristicsAdmin(admin.ModelAdmin):
     pass
     # list_display = ("id", "name")
@@ -46,7 +47,7 @@ class ProductTechnicalCharacteristicsAdmin(admin.ModelAdmin):
     # ordering = ("name",)
 
 
-@admin.register(models.Category)
+@admin.register(models.Category, site=site)
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ("id", "name")
     list_display_links = ("id", "name")
@@ -55,7 +56,7 @@ class CategoryAdmin(admin.ModelAdmin):
     ordering = ("name",)
 
 
-@admin.register(models.Product)
+@admin.register(models.Product, site=site)
 class ProductAdmin(admin.ModelAdmin):
     list_display = ("id", "store", "name", "category", "price", "image")
     list_display_links = ("id", "store", "name", "category", "price", "image")
@@ -70,7 +71,7 @@ class ProductAdmin(admin.ModelAdmin):
     }
 
 
-@admin.register(models.PriceProductHistory)
+@admin.register(models.PriceProductHistory, site=site)
 class PriceProductHistoryAdmin(admin.ModelAdmin):
     # Pode ser deletado depois de ter integração com lojistas
     list_display = ("id", "product", "price", "created_at")
