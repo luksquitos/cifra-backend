@@ -32,4 +32,4 @@ def logistic_register_view(request):
     else:
         form = forms.LogisticSignUpForm()
 
-    return render(request, "create_logistic_account.html", {"form": form})
+    return render(request, "sign-up-logistic.html", {"form": form})

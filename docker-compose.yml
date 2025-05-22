@@ -28,6 +28,7 @@ services:
       - ./core:/app/core
       - ./features:/app/features
       - ./media:/app/media
+      - ./templates:/app/templates
     env_file:
       .env
 
