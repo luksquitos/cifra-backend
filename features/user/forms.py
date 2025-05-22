@@ -2,8 +2,10 @@ from django import forms
 from django.contrib.admin.widgets import AdminTextInputWidget
 from django.contrib.auth.forms import BaseUserCreationForm, ReadOnlyPasswordHashField
 from django.contrib.auth.models import Group
+from django.db import transaction
 from django.utils.translation import gettext_lazy as _
 
+from core.validators import validate_cnpj
 from features.stores.models import Store
 from features.user.models import TypeUser, User
 
@@ -64,7 +66,9 @@ class LogisticSignUpForm(forms.ModelForm):
     # Campos da loja
     store_name = forms.CharField(label="Nome da Loja", widget=AdminTextInputWidget)
     store_address = forms.CharField(label="Endereço", widget=AdminTextInputWidget)
-    store_cnpj = forms.CharField(label="CNPJ", widget=AdminTextInputWidget)
+    store_cnpj = forms.CharField(
+        label="CNPJ", widget=AdminTextInputWidget, validators=[validate_cnpj]
+    )
 
     class Meta:
         model = User
@@ -85,17 +89,18 @@ class LogisticSignUpForm(forms.ModelForm):
         )
         user.set_password(self.cleaned_data["password1"])
         if commit:
-            user.save()
+            with transaction.atomic():  # Revert transactions if any error occured.
+                user.save()
 
-            # Add logistic to logistics group
-            group = Group.objects.get(name="logistics")
-            user.groups.add(group)
+                # Add logistic to logistics group
+                group = Group.objects.get(name="logistics")
+                user.groups.add(group)
 
-            # Create store
-            Store.objects.create(
-                user=user,
-                name=self.cleaned_data["store_name"],
-                address=self.cleaned_data["store_address"],
-                cnpj=self.cleaned_data["store_cnpj"],
-            )
+                # Create store
+                Store.objects.create(
+                    user=user,
+                    name=self.cleaned_data["store_name"],
+                    address=self.cleaned_data["store_address"],
+                    cnpj=self.cleaned_data["store_cnpj"],
+                )
         return user
