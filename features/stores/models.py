@@ -97,7 +97,6 @@ class Product(models.Model):
         "stores.Category", models.CASCADE, verbose_name="Categoria"
     )
     name = models.CharField("Nome", max_length=200)
-    about = models.TextField("Sobre", help_text="Sobre o produto")
     quantity = models.PositiveIntegerField("Quantidade disponível")
     price = models.DecimalField(
         verbose_name="Preço",
@@ -143,7 +142,7 @@ class PriceProductHistory(models.Model):
         decimal_places=2,
         validators=[MinValueValidator(Decimal("0.01"))],
     )
-    created_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name="Criado em")
 
     class Meta:
         verbose_name = "Histórico de preço de produto"
