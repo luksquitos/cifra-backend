@@ -1,11 +1,15 @@
 from django.conf import settings
-from django.contrib import admin
-from django.urls import path, include, reverse
 from django.conf.urls.static import static
 from django.shortcuts import redirect
+from django.urls import include, path, reverse
+
+from core.admin import site
+from features.user.views import logistic_register_view
+
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
+    path("sign-up/", logistic_register_view, name="logistic-register"),
+    path("admin/", site.urls),
     path("api/", include("core.api.urls")),
     path("", lambda x: redirect(reverse("swagger-ui"))),
 ]

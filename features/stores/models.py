@@ -5,9 +5,27 @@ from django.core.validators import MinValueValidator
 from django.db import models
 from django.dispatch import receiver
 
+from core.faker import fake
+from core.validators import validate_cnpj
+from features.user.validators import validate_logistic
+
 
 class Store(models.Model):
+    user = models.OneToOneField(
+        "user.User",
+        models.CASCADE,
+        related_name="store",
+        verbose_name="Lojista",
+        validators=[validate_logistic],
+        # TODO Remove after fixtures for all.
+        null=True,
+        blank=True,
+    )
     name = models.CharField("Nome", max_length=200)
+    address = models.CharField("Endereço", max_length=256, default=fake.address())
+    cnpj = models.CharField(
+        "CNPJ", max_length=18, validators=[validate_cnpj], default=fake.cnpj()
+    )
 
     def __str__(self):
         return self.name
@@ -79,13 +97,13 @@ class Product(models.Model):
         "stores.Category", models.CASCADE, verbose_name="Categoria"
     )
     name = models.CharField("Nome", max_length=200)
-    about = models.TextField("Sobre", help_text="Sobre o produto")
     quantity = models.PositiveIntegerField("Quantidade disponível")
     price = models.DecimalField(
         verbose_name="Preço",
         max_digits=6,
         decimal_places=2,
         validators=[MinValueValidator(Decimal("0.01"))],
+        help_text="Unidade",
     )
     image = models.ImageField(
         "Imagem", upload_to=product_directory_path, null=True, blank=True
@@ -107,6 +125,9 @@ class ProductTechnicalCharacteristics(models.Model):
     key = models.CharField("Nome da Característica")
     value = models.CharField("Característica")
 
+    def __str__(self):
+        return f"{self.key}: {self.value}"
+
     class Meta:
         verbose_name = "Caracteristica Técnica do Produto"
         verbose_name_plural = "Caracteristicas Técnicas do Produto"
@@ -125,7 +146,10 @@ class PriceProductHistory(models.Model):
         decimal_places=2,
         validators=[MinValueValidator(Decimal("0.01"))],
     )
-    created_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name="Criado em")
+
+    def __str__(self):
+        return ""
 
     class Meta:
         verbose_name = "Histórico de preço de produto"

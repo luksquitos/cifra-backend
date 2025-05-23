@@ -1,16 +1,28 @@
+from django.contrib.auth.base_user import AbstractBaseUser
+from django.contrib.auth.hashers import make_password
+from django.contrib.auth.models import PermissionsMixin
 from django.db import models
 from django.utils import timezone
-from django.contrib.auth.hashers import make_password
-from django.contrib.auth.base_user import AbstractBaseUser
-from django.contrib.auth.models import PermissionsMixin
 
 from core.faker import fake
+
 from .manager import UserManager
+
+
+class TypeUser(models.TextChoices):
+    LOGISTIC = "logistic", "Lojista"
+    CLIENT = "client", "Cliente"
 
 
 class User(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField("E-mail", unique=True, blank=True)
     name = models.CharField("Nome", max_length=160)
+    type_user = models.CharField(
+        "Tipo de Usuário",
+        max_length=8,
+        choices=TypeUser.choices,
+        default=TypeUser.CLIENT,
+    )
     is_staff = models.BooleanField(
         "Membro da Equipe?",
         default=False,
@@ -31,7 +43,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         if "password" in data:
             password = data.pop("password")
         else:
-            password = None  
+            password = None
 
         data = {"email": fake.unique.email(), "name": fake.name(), **data}
 
