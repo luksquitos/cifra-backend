@@ -21,6 +21,13 @@ class AuthenticatedUserAPIView(views.APIView):
 
 
 class UserAPIView(views.APIView):
+    @extend_schema(
+        responses={
+            200: serializers.CreateUserSerializer,
+        },
+        request=serializers.CreateUserSerializer,
+        description="Cria um novo usuário do tipo cliente",
+    )
     def post(self, request):
         serializer = serializers.CreateUserSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
