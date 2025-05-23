@@ -103,6 +103,7 @@ class Product(models.Model):
         max_digits=6,
         decimal_places=2,
         validators=[MinValueValidator(Decimal("0.01"))],
+        help_text="Unidade",
     )
     image = models.ImageField(
         "Imagem", upload_to=product_directory_path, null=True, blank=True
@@ -124,6 +125,9 @@ class ProductTechnicalCharacteristics(models.Model):
     key = models.CharField("Nome da Característica")
     value = models.CharField("Característica")
 
+    def __str__(self):
+        return f"{self.key}: {self.value}"
+
     class Meta:
         verbose_name = "Caracteristica Técnica do Produto"
         verbose_name_plural = "Caracteristicas Técnicas do Produto"
@@ -143,6 +147,9 @@ class PriceProductHistory(models.Model):
         validators=[MinValueValidator(Decimal("0.01"))],
     )
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Criado em")
+
+    def __str__(self):
+        return ""
 
     class Meta:
         verbose_name = "Histórico de preço de produto"
