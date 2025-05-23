@@ -20,6 +20,15 @@ class AuthenticatedUserAPIView(views.APIView):
         return response.Response(serializer.data, status=status.HTTP_200_OK)
 
 
+class UserAPIView(views.APIView):
+    def post(self, request):
+        serializer = serializers.CreateUserSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+
+        return response.Response(serializer.data, status=200)
+
+
 def logistic_register_view(request):
     if request.method == "POST":
         form = forms.LogisticSignUpForm(request.POST)
