@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     # Feature Apps
     "features.authentication",
     "features.user",
+    "features.lists",
     "features.stores",
 ]
 
