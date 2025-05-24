@@ -40,7 +40,7 @@ class UserAdmin(admin.ModelAdmin):
     add_form = forms.UserCreationForm
     inlines = [StoreInline]
     logistic_fieldsets = (
-        ("Informações de Login", {"fields": ("email", "password")}),
+        ("Informações de Login", {"fields": ("email",)}),
         ("Informações Pessoais", {"fields": ("name",)}),
     )
     fieldsets = (
