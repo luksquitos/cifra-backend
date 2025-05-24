@@ -24,6 +24,7 @@ sensitive_post_parameters_m = method_decorator(sensitive_post_parameters())
 class StoreInline(admin.StackedInline):
     model = Store
     extra = 0
+    can_delete = False
 
 
 @admin.register(models.User, site=site)

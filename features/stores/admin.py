@@ -13,8 +13,6 @@ class SpecificCharacteristicInline(admin.TabularInline):
 
 
 class ProductHistoryInline(admin.TabularInline):
-    # FIXME Logista não consegue apagar histórico de preço mesmo
-    # querendo apagar um Produto
     model = models.PriceProductHistory
     extra = 0
     classes = ("collapse",)
@@ -23,9 +21,6 @@ class ProductHistoryInline(admin.TabularInline):
 
     def has_add_permission(self, request, obj):
         return False
-
-    # def has_delete_permission(self, request, obj=...):
-    #     return False
 
     def has_change_permission(self, request, obj=...):
         return False
@@ -43,11 +38,6 @@ class StoreAdmin(admin.ModelAdmin):
 @admin.register(models.ProductTechnicalCharacteristics, site=site)
 class ProductTechnicalCharacteristicsAdmin(admin.ModelAdmin):
     pass
-    # list_display = ("id", "name")
-    # list_display_links = ("id", "name")
-    # search_fields = ("name",)
-    # list_filter = ("name",)
-    # ordering = ("name",)
 
 
 @admin.register(models.Category, site=site)
@@ -107,7 +97,6 @@ class ProductAdmin(admin.ModelAdmin):
 
 @admin.register(models.PriceProductHistory, site=site)
 class PriceProductHistoryAdmin(admin.ModelAdmin):
-    # Pode ser deletado depois de ter integração com lojistas
     list_display = ("id", "product", "price", "created_at")
     list_display_links = ("id", "product", "price", "created_at")
     search_fields = ("product__name", "price")
