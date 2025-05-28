@@ -1,3 +1,4 @@
+from django.shortcuts import get_object_or_404
 from rest_framework import viewsets
 from rest_framework.decorators import action
 from rest_framework.permissions import IsAuthenticated
@@ -28,9 +29,12 @@ class ProductListViewSet(viewsets.ModelViewSet):
     serializer_class = serializers.ProductListSerializer
     permission_classes = [IsAuthenticated]
 
-    # Imagino que para criar, não terá validação por usuário.
-    def get_queryset(self, request):
-        pk = self.kwargs.get("list_pk")
+    def get_queryset(self):
         return models.ProductList.objects.select_related("user_list__user").filter(
-            user_list__pk=pk, user_list__user=self.request.user
+            user_list=self.get_related_list()
+        )
+
+    def get_related_list(self):
+        return get_object_or_404(
+            models.UserList, pk=self.kwargs.get("list_pk"), user=self.request.user
         )

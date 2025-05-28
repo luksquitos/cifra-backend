@@ -4,10 +4,7 @@ from features.lists import models
 
 
 class ListSerializer(serializers.ModelSerializer):
-    # Need to be null values?
     user = serializers.HiddenField(default=serializers.CurrentUserDefault())
-    # total_price = serializers.DecimalField(max_digits=12, decimal_places=2, read_only=True)
-    # better_store = serializers.PrimaryKeyRelatedField(read_only=True)
 
     class Meta:
         model = models.UserList
@@ -15,8 +12,15 @@ class ListSerializer(serializers.ModelSerializer):
         read_only_fields = ["total_price", "better_store", "last_update"]
 
 
+class UserListDefault:
+    requires_context = True
+
+    def __call__(self, field):
+        return field.context["view"].get_related_list()
+
+
 class ProductListSerializer(serializers.ModelSerializer):
-    # user_list = serializers.HiddenField("default") # Tem que pegar do NestedRouter
+    user_list = serializers.HiddenField(default=UserListDefault())
 
     class Meta:
         model = models.ProductList
