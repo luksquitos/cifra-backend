@@ -1,6 +1,8 @@
 from rest_framework import serializers
+from rest_framework.validators import UniqueTogetherValidator
 
 from features.lists import models
+from features.stores.models import Product
 
 
 class ListSerializer(serializers.ModelSerializer):
@@ -22,6 +24,20 @@ class UserListDefault:
 class ProductListSerializer(serializers.ModelSerializer):
     user_list = serializers.HiddenField(default=UserListDefault())
 
+    def validate_name(self, value):
+        products = Product.objects.filter(name=value)
+        if not products.exists():
+            raise serializers.ValidationError("Produto com este nome não existe")
+
+        return value
+
     class Meta:
         model = models.ProductList
         fields = "__all__"
+        validators = [
+            UniqueTogetherValidator(
+                queryset=models.ProductList.objects.all(),
+                fields=["user_list", "name"],
+                message="Produto já está nesta lista",
+            )
+        ]
