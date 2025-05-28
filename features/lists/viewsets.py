@@ -1,4 +1,5 @@
 from django.shortcuts import get_object_or_404
+from drf_spectacular.utils import extend_schema
 from rest_framework import viewsets
 from rest_framework.decorators import action
 from rest_framework.permissions import IsAuthenticated
@@ -16,6 +17,11 @@ class ListViewSet(viewsets.ModelViewSet):
             user=self.request.user
         )
 
+    @extend_schema(
+        request=None,
+        description="Endpoint para calcular, ou recalcular, valor total de lista de usuário.",
+        responses={200: {}},
+    )
     @action(methods=["put"], detail=True)
     def calculate(self, request, pk):
         pass

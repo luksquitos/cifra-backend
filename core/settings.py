@@ -190,5 +190,9 @@ SPECTACULAR_SETTINGS = {
             "name": "stores",
             "description": "Reúne endpoints para lidar com as lojas da plataforma.",
         },
+        {
+            "name": "lists",
+            "description": "Reúne endpoints para lidar com as listas dos usuários na plataforma.",
+        },
     ],
 }
