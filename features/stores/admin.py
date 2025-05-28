@@ -94,6 +94,9 @@ class ProductAdmin(admin.ModelAdmin):
         store = models.Store.objects.get(user=request.user)
         return models.Product.objects.select_related("store").filter(store=store)
 
+    class Media:
+        js = ("js/admin_no_multiple_clicks.js",)
+
 
 @admin.register(models.PriceProductHistory, site=site)
 class PriceProductHistoryAdmin(admin.ModelAdmin):
