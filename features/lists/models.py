@@ -31,15 +31,13 @@ class UserList(models.Model):
     def calculate_best_spot(self):
         """Finds the cheapest store that contains all products from the user's list
         with the desired quantities."""
-        products_list = self.products.all()
-        if not products_list.exists():
-            self.best_store = None
-            self.total_price = None
-            self.last_update = None
-            self.save()
+
+        self.products_list = self.products.all()
+        if not self.products_list.exists():
+            self._reset_best_spot_info()
             return
 
-        product_list_name = self.products.all().values_list("name", flat=True)
+        product_list_name = self.products_list.values_list("name", flat=True)
 
         products = (
             Product.objects.filter(name__in=product_list_name)
@@ -77,10 +75,7 @@ class UserList(models.Model):
             )
 
         if not products_grouped:  # Any stores has wished items.
-            self.best_store = None
-            self.total_price = None
-            self.last_update = None
-            self.save()
+            self._reset_best_spot_info()
             return
 
         # Sort by lower price.
@@ -88,13 +83,40 @@ class UserList(models.Model):
         best_spot = products_grouped[0]
 
         # Update UserList best spot values
+        self._update_list_values(best_spot)
+
+    def _update_list_values(self, best_spot: tuple):
         store_pk, queryset, total_price = best_spot
         self.best_store = Store.objects.get(pk=store_pk)
         self.total_price = total_price
         self.last_update = datetime.now()
         self.save()
+        queryset_map = {p.name: p for p in queryset}
 
-        # TODO Update products price, and total_price
+        for product in self.products.all():
+            store_product = queryset_map.get(product.name)
+            product.price = store_product.price
+            product.total_price = store_product.total_price
+
+            product.save()
+
+    def _reset_best_spot_info(self):
+        self.best_store = None
+        self.total_price = None
+        self.last_update = None
+        self.save()
+
+        if not self.products_list.exists():
+            return
+
+        for product in self.products_list:
+            product.price = None
+            product.total_price = None
+
+        ProductList.objects.bulk_update(self.products_list, ["price", "total_price"])
+
+    def __str__(self):
+        return f"Lista de {self.name}"
 
     class Meta:
         verbose_name = "Lista de Usuário"
@@ -107,3 +129,19 @@ class ProductList(models.Model):
     )
     name = models.CharField("Nome", max_length=200)
     quantity = models.PositiveSmallIntegerField("Quantidade de itens")
+    price = models.DecimalField(
+        verbose_name="Preço",
+        max_digits=12,
+        decimal_places=2,
+        help_text="Valor do produto no melhor local de compra",
+        null=True,
+        blank=True,
+    )
+    total_price = models.DecimalField(
+        verbose_name="Preço total",
+        max_digits=12,
+        decimal_places=2,
+        help_text="Valor total dos produtos do melhor local de compra baseado na quantidade",
+        null=True,
+        blank=True,
+    )
