@@ -11,7 +11,7 @@ class ListSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.UserList
         fields = "__all__"
-        read_only_fields = ["total_price", "better_store", "last_update"]
+        read_only_fields = ["total_price", "best_store", "last_update"]
 
 
 class UserListDefault:

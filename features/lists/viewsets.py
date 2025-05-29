@@ -24,9 +24,8 @@ class ListViewSet(viewsets.ModelViewSet):
     )
     @action(methods=["put"], detail=True)
     def calculate(self, request, pk):
-        pass
-        # user_list = self.get_object()
-        # user_list.calculate_best_spot()
+        user_list = self.get_object()
+        user_list.calculate_best_spot()
 
         return Response(status=200)
 
