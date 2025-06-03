@@ -3,6 +3,7 @@ name = "cifra-marketplace"
 version = "0.0.1"
 dependencies = [
     "Django==5.1",
+    "django-admin-interface==0.30.0",
     "django-cors-headers==4.2.0",
     "django-environ==0.10.0",
     "django-image-uploader-widget==1.0.0",

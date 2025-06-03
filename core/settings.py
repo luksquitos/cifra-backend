@@ -24,6 +24,8 @@ if env("CSRF_TRUSTED_ORIGINS"):
     CSRF_TRUSTED_ORIGINS = env("CSRF_TRUSTED_ORIGINS")
 
 INSTALLED_APPS = [
+    "admin_interface",
+    "colorfield",
     # Original Django Apps
     "django.contrib.admin",
     "django.contrib.auth",
