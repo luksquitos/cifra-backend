@@ -1,3 +1,5 @@
+from admin_interface.admin import ThemeAdmin
+from admin_interface.models import Theme
 from django.contrib import admin
 from django.contrib.auth.models import Group
 
@@ -22,6 +24,11 @@ class AdminSite(admin.AdminSite):
 
 
 site = AdminSite("admin")
+
+
+@admin.register(Theme, site=site)
+class ThemeAdmin(ThemeAdmin):
+    pass
 
 
 @admin.register(Group, site=site)
