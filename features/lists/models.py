@@ -123,6 +123,12 @@ class UserList(models.Model):
         verbose_name_plural = "Listas de Usuários"
 
 
+def product_directory_path(instance, filename):
+    return (
+        f"lists/{instance.user_list.user.email}/{instance.user_list.pk}/{instance.name}"
+    )
+
+
 class ProductList(models.Model):
     user_list = models.ForeignKey(
         "lists.UserList", models.CASCADE, related_name="products", verbose_name="Lista"
@@ -144,4 +150,7 @@ class ProductList(models.Model):
         help_text="Valor total dos produtos do melhor local de compra baseado na quantidade",
         null=True,
         blank=True,
+    )
+    image = models.ImageField(
+        "Imagem", upload_to=product_directory_path, null=True, blank=True
     )
