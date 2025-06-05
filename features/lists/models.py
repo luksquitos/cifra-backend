@@ -97,6 +97,8 @@ class UserList(models.Model):
             store_product = queryset_map.get(product.name)
             product.price = store_product.price
             product.total_price = store_product.total_price
+            if not product.image:
+                product.image = store_product.image
 
             product.save()
 
