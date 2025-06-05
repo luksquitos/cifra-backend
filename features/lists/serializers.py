@@ -34,6 +34,7 @@ class ProductListSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.ProductList
         fields = "__all__"
+        read_only_fields = ["image"]
         validators = [
             UniqueTogetherValidator(
                 queryset=models.ProductList.objects.all(),
