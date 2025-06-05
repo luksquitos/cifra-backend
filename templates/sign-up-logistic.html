@@ -18,8 +18,8 @@
             font-size: 24px;
             text-align: center;
             margin-bottom: 20px;
-            background: #417690;
-            color: #f5dd5d;
+            background: rgb(12, 75, 51);
+            color: rgb(245, 221, 93);
             padding: 15px;
             border-radius: 4px 4px 0 0;
         }
@@ -45,7 +45,7 @@
         }
         .submit-row input[type="submit"] {
             padding: 8px 16px;
-            background-color: #5b80b2;
+            background-color: rgb(12, 75, 51);
             color: white;
             border: none;
             border-radius: 4px;
@@ -57,7 +57,7 @@
     </style>
 </head>
 <body class="login">
-    <h1>Administração do Django</h1>
+    <h1>Cadastro de Logista</h1>
     <form method="post" novalidate>
         {% csrf_token %}
         {% for field in form %}
