@@ -31,6 +31,13 @@ class ProductListSerializer(serializers.ModelSerializer):
 
         return value
 
+    def create(self, validated_data):
+        name = validated_data.get("name")
+        product = Product.objects.filter(name=name).first()
+        validated_data["image"] = product.image
+
+        return super().create(validated_data)
+
     class Meta:
         model = models.ProductList
         fields = "__all__"
